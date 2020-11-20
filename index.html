@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Zim - the Zsh framework with blazing speed and modular extensions.</title>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css">
   <link rel="stylesheet" href="https://jenil.github.io/bulmaswatch/lumen/bulmaswatch.min.css">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
@@ -12,6 +13,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     @media(max-width: 500px) {
       .reverse-columns {
         flex-direction: column-reverse;
@@ -85,12 +90,7 @@
     <div class="hero-body">
       <div class="container">
         <div class="columns is-vcentered reverse-columns">
-          <div class="column
-          is-10-mobile is-offset-1-mobile
-          is-10-tablet is-offset-1-tablet
-          is-5-desktop is-offset-1-desktop
-          is-5-widescreen is-offset-1-widescreen
-          is-5-fullhd is-offset-1-fullhd" data-aos="fade-down">
+          <div class="column" data-aos="fade-down">
             <h1 class="title titled is-1 mb-6">
               Get Zim.
             </h1>
@@ -98,12 +98,12 @@
               The Zsh configuration framework with <b><a href="https://github.com/zimfw/zimfw/wiki/Speed" target="_blank">blazing speed</a></b> and <b><a href="https://github.com/zimfw/zimfw/wiki/Modules" target="_blank">modular extensions</a></b>.
             </h2>
             <div class="buttons">
-              <button
+              <a
                 class="button is-black"
-                onclick="alert('get zim')"
+                href="#install"
               >
                 Get it
-            </button>
+            </a>
               <a 
                 class="button"
                 href="https://github.com/zimfw/zimfw/blob/master/README.md"
@@ -113,14 +113,12 @@
               </a>
             </div>
           </div>
-          <div data-aos="fade-right" class="column
-          is-10-mobile is-offset-1-mobile
-          is-10-tablet is-offset-1-tablet
-          is-4-desktop is-offset-1-desktop
-          is-4-widescreen is-offset-1-widescreen
-          is-4-fullhd is-offset-1-fullhd">
+          <div data-aos="fade-right" class="column is-offset-1 is-5">
             <figure class="image">
-              <img src="images/zim.svg">
+              <img 
+                src="./images/zim_help.png"
+                alt="Zim preview"
+              >
             </figure>
           </div>
 
@@ -141,7 +139,10 @@
               Zim bundles useful modules, a wide variety of themes, and plenty of customizability into a simple and super fast framweork. 
             </h2>
             <figure class="image">
-              <img src="https://camo.githubusercontent.com/30dbc275e3c76170ff78fc5d8ad4c46d75b3af5136c8d339372a8793e60cc20e/68747470733a2f2f7a696d66772e6769746875622e696f2f696d616765732f7a696d5f686973746f72792d737562737472696e672d7365617263682e676966">
+              <img 
+                src="./images/zim_history-substring-search.gif"
+                alt="Zim substring search demo"
+              >
             </figure>
           </div>
         </div>
@@ -161,7 +162,10 @@
           is-4-widescreen is-offset-1-widescreen
           is-4-fullhd is-offset-1-fullhd">
             <figure class="image">
-              <img src="https://camo.githubusercontent.com/30dbc275e3c76170ff78fc5d8ad4c46d75b3af5136c8d339372a8793e60cc20e/68747470733a2f2f7a696d66772e6769746875622e696f2f696d616765732f7a696d5f686973746f72792d737562737472696e672d7365617263682e676966">
+              <img 
+                src="./images/zim_history-substring-search.gif"
+                alt="Zim substring search demo"
+              >
             </figure>
           </div>
           <div data-aos="fade-down" class="column
@@ -198,7 +202,7 @@
               helpful syntax highlighting
             </h1>
             <h2 class="subtitle subtitled">
-              When you type shit that doesn't work, Zim will kindly let you know that you're a dumbass.
+              Looking for those missing {}? Zim won't let you down.
             </h2>
           </div>
           <div data-aos="fade-down" class="column
@@ -207,8 +211,11 @@
           is-4-desktop is-offset-1-desktop
           is-4-widescreen is-offset-1-widescreen
           is-4-fullhd is-offset-1-fullhd" data-aos="fade-up">
-            <figure class="image is-square">
-              <img src="../images/undraw_Camera_re_cnp4.svg">
+            <figure class="image">
+              <img 
+                src="./images/zim_syntax-highlighting.gif"
+                alt="Zim syntax highlighting demo"
+              >
             </figure>
           </div>
 
@@ -217,7 +224,7 @@
     </div>
   </section>
 
-  <section class="hero is-primary is-medium has-text-centered">
+  <section id="install" class="hero is-primary is-medium has-text-centered">
     <div class="hero-body">
       <div class="container">
         <div class="columns is-centered">
@@ -231,11 +238,11 @@
             <div class="install">
               <div class="tabs is-boxed mb-0">
                 <ul>
-                  <li class="is-active"><a>with curl</a></li>
-                  <li><a>with wget</a></li>
+                  <li id="curlBtn" onclick="switchTabs('curl')" class="is-active"><a>with curl</a></li>
+                  <li id="wgetBtn" onclick="switchTabs('wget')"><a>with wget</a></li>
                 </ul>
               </div>
-              <pre class="has-background-dark has-text-white">curl -fsSL https://zimfw.sh/install.zsh | zsh</pre>
+              <pre id="installCommand" class="has-background-dark has-text-white">curl -fsSL https://zimfw.sh/install.zsh | zsh</pre>
             </div>
           </div>
         </div>
@@ -247,7 +254,7 @@
     <div class="content has-text-centered">
       <p>
         <strong>Zim Framework</strong> by <a href="https://github.com/orgs/zimfw/people" target="_blank">Eric Nielsen, Matt Hamilton and contributors</a>. The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php" target="_blank">MIT</a>. The website content
+        <a href="http://opensource.org/licenses/mit-license.php" target="_blank">MIT</a>. This website's content
         is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY NC SA 4.0</a>.
       </p>
       <a
@@ -256,6 +263,7 @@
         target="_blank"
       >
         <i class="fa fa-github" aria-hidden="true"></i>
+        <span class="sr-only">Github</span>
       </a>
     </div>
   </footer>
@@ -273,6 +281,22 @@
     AOS.init({
       once: true
     });
+  </script>
+  <script>
+    function switchTabs(name) {
+      var curlBtn = document.getElementById('curlBtn');
+      var wgetBtn = document.getElementById('wgetBtn');
+      var command = document.getElementById('installCommand');
+      if (name === "wget") {
+        curlBtn.className = "";
+        wgetBtn.className = "is-active";
+        command.innerText = "wget -nv -O - https://zimfw.sh/install.zsh | zsh"
+      } else if (name === "curl") {
+        curlBtn.className = "is-active";
+        wgetBtn.className = "";
+        command.innerText = "curl -fsSL https://zimfw.sh/install.zsh | zsh"
+      }
+    }
   </script>
 </body>
 

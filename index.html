@@ -37,6 +37,10 @@
       font-weight: 400 !important;
       line-height: 36px !important;
     }
+
+    .has-shadow {
+      filter: drop-shadow(5px 5px 12px #222);
+    }
   </style>
 </head>
 
@@ -79,6 +83,7 @@
             target="_blank"
           >
             <i class="fa fa-github" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span>
           </a>
         </div>
       </div>
@@ -114,7 +119,7 @@
             </div>
           </div>
           <div data-aos="fade-right" class="column is-offset-1 is-5">
-            <figure class="image">
+            <figure class="image has-shadow">
               <img 
                 src="./images/zim_help.png"
                 alt="Zim preview"
@@ -139,7 +144,7 @@
             <h2 class="subtitle subtitled">
               Zim bundles useful modules, a wide variety of themes, and plenty of customizability into a simple and super fast framweork. 
             </h2>
-            <figure class="image">
+            <figure class="image has-shadow">
               <img 
                 src="./images/zim_history-substring-search.gif"
                 alt="Zim substring search demo"
@@ -156,32 +161,21 @@
   <section class="hero is-medium">
     <div class="hero-body">
       <div class="container">
-        <div class="columns  is-vcentered">
-          <div data-aos="fade-left" class="column
-          is-10-mobile is-offset-1-mobile
-          is-10-tablet is-offset-1-tablet
-          is-4-desktop is-offset-1-desktop
-          is-4-widescreen is-offset-1-widescreen
-          is-4-fullhd is-offset-1-fullhd">
-            <figure class="image">
+        <div class="columns is-variable is-8 is-vcentered">
+          <div data-aos="fade-left" class="column">
+            <figure class="image has-shadow">
               <img 
                 src="./images/zim_history-substring-search.gif"
                 alt="Zim substring search demo"
               >
             </figure>
           </div>
-          <div data-aos="fade-down" class="column
-          is-10-mobile is-offset-1-mobile
-          is-10-tablet is-offset-1-tablet
-          is-5-desktop is-offset-1-desktop
-          is-5-widescreen is-offset-1-widescreen
-          is-5-fullhd is-offset-1-fullhd">
+          <div data-aos="fade-down" class="column">
             <h1 class="titled title is-1 mb-6">
-              predictive shell history navigation
+              predictive shell history
             </h1>
             <h2 class="subtitled subtitle">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum cupiditate dolorum vitae dolores
-              nesciunt totam magni quas.
+              Zim suggests commands as you type based on history and completions, allowing easy access to that thing you did yesterday but forgot already.
             </h2>
           </div>
 
@@ -194,13 +188,8 @@
   <section class="hero is-dark is-medium">
     <div class="hero-body">
       <div class="container">
-        <div class="columns  is-vcentered reverse-columns">
-          <div data-aos="fade-right" class="column
-          is-10-mobile is-offset-1-mobile
-          is-10-tablet is-offset-1-tablet
-          is-5-desktop is-offset-1-desktop
-          is-5-widescreen is-offset-1-widescreen
-          is-5-fullhd is-offset-1-fullhd">
+        <div class="columns is-variable is-8 is-vcentered reverse-columns">
+          <div data-aos="fade-right" class="column">
             <h1 class="title titled is-1 mb-6">
               helpful syntax highlighting
             </h1>
@@ -208,13 +197,8 @@
               Looking for those missing {}? Zim won't let you down.
             </h2>
           </div>
-          <div data-aos="fade-down" class="column
-          is-10-mobile is-offset-1-mobile
-          is-10-tablet is-offset-1-tablet
-          is-4-desktop is-offset-1-desktop
-          is-4-widescreen is-offset-1-widescreen
-          is-4-fullhd is-offset-1-fullhd" data-aos="fade-up">
-            <figure class="image">
+          <div data-aos="fade-down" class="column" data-aos="fade-up">
+            <figure class="image has-shadow">
               <img 
                 src="./images/zim_syntax-highlighting.gif"
                 alt="Zim syntax highlighting demo"

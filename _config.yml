@@ -1,0 +1,12 @@
+permalink: pretty
+
+exclude:
+  - docker_compose.yml
+  - podman.sh
+
+defaults:
+  -
+    scope:
+      path: "docs" # an empty string here means all files in the project
+    values:
+      layout: "docs"

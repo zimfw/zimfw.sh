@@ -1,3 +1,5 @@
+livereload: true
+
 permalink: pretty
 
 exclude:

@@ -1,1 +1,1 @@
-podman run --privileged=true -p 8080:4000 -v $(pwd):/site bretfisher/jekyll-serve
+podman run --privileged=true -p 8080:4000 -p 35729:35729 -v $(pwd):/site bretfisher/jekyll-serve

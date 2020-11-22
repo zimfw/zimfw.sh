@@ -1,0 +1,11 @@
+{
+  "name": "zimfw.sh",
+  "version": "1.0.0",
+  "description": "A modern website for the Zim framework.",
+  "main": "index.js",
+  "repository": "https://github.com/zimfw/zimfw.sh.git",
+  "license": "MIT",
+  "dependencies": {
+    "bulma": "^0.9.1"
+  }
+}

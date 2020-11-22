@@ -1,0 +1,20 @@
+html {
+  scroll-behavior: smooth;
+}
+
+@media(max-width: 500px) {
+  .reverse-columns {
+    flex-direction: column-reverse;
+    display: flex;
+  }
+}
+
+.has-shadow {
+  filter: drop-shadow(5px 5px 12px #222);
+}
+
+.is-sticky-top {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1rem;
+}

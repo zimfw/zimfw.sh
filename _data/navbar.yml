@@ -1,0 +1,14 @@
+links:
+  - name: Docs
+    type: internal
+    href: /docs/
+  - name: Themes
+    type: internal
+    href: /docs/themes/
+  - name: Modules
+    type: internal
+    href: /docs/modules/
+  - name: GitHub
+    icon: fa-github
+    type: external
+    href: https://github.com/zimfw/zimfw

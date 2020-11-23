@@ -1,23 +1,23 @@
 ---
 layout: page
 ---
+
 <div class="container my-6">
   <div class="columns is-desktop">
     <div 
-      class="column is-narrow"
-      style="min-width: 300px;"
+      class="column is-3-desktop"
     >
       <div class="is-sticky-top px-2 pb-4">
-        {% include menubar.html %}
+        {% include "menubar.njk" %}
       </div>
     </div>
 
-    <div class="column">
+    <div class="column is-9-desktop">
       <div class="content mx-4">
         <h1 class="title titled is-1">
-          {{ page.title }}
+          {{ title }}
         </h1>
-        {{ content }}
+        {{ content | safe }}
       </div>
     </div>
   </div>

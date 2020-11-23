@@ -12,7 +12,8 @@ jobs:
       - uses: actions/checkout@v2
 
       # Cache node_modules folder unless yarn.lock changes (Bulma is updated)
-      - uses: actions/cache@v2
+      - name: Load cached node_modules 
+        uses: actions/cache@v2
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
@@ -20,19 +21,22 @@ jobs:
       # Install libraries with Yarn
       - name: Install packages 📦
         run: yarn install
+      
+      # Builds site for production
+      - name: Build site 🚧
+        run: yarn build
+        if: ${{ github.repository_owner == 'zimfw' }}
 
-      # Use GitHub Actions' cache to shorten build times and decrease load on servers
-      - uses: actions/cache@v2
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
+      # Builds the site on another repo (not zimfw.sh)
+      - name: Build site (dev) 🚧
+        run: yarn build:prefix
+        if: ${{ github.repository_owner != 'zimfw' }}
 
       # Build site with Jekyll and publish to github_pages branch
-      - name: Build & Deploy to GitHub Pages 💻
-        env: 
+      - name: Deploy to GitHub Pages 💻
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
-          GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
-        uses: joshlarsen/jekyll4-deploy-gh-pages@master
+          BRANCH: gh-pages 
+          FOLDER: _site
+          CLEAN: true

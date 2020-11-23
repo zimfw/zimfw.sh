@@ -18,3 +18,7 @@ html {
   position: sticky;
   top: 1rem;
 }
+
+.content * {
+  overflow-wrap: anywhere;
+}

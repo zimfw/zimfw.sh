@@ -2,4 +2,4 @@
 title: Getting Started
 ---
 
- - [Install Zim](/docs/install)
+ - [Install Zim](install)

@@ -8,18 +8,18 @@
 
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
-  {% for uri in page.extraStyles %}
+  <link rel="stylesheet" href="{{ '/css/main.css' | url }}" />
+  {% for uri in extraStyles %}
     <link rel="stylesheet" href="{{ uri }}" />
   {% endfor %}
 </head>
 
 <body>
-  {% include navbar.html %}
+  {% include "navbar.njk" %}
 
-  {{ content }}
+  {{ content | safe }}
 
-  {% include footer.html %}
+  {% include "footer.njk" %}
 </body>
 
 </html>

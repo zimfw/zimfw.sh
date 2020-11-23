@@ -1,11 +1,13 @@
 # zimfw.sh
 A modern website for the Zim framework.
 
-Built with Bulma, aos.js, and more. 
+Built with Bulma, aos.js, and 11ty.
 
-### Develop using Docker
-Don't want to install Jekyll? Just start the development container with docker-compose, and visit localhost:8080 in your browser. 
+### Contributing
+To contribute to the documentation, simply edit the files in the `docs` folder. 
+To add a new page to the menu, edit `_data/docs_menu.yml` and add an entry.
 
+### Start development server
 ```
-docker-compose up
+yarn serve
 ```

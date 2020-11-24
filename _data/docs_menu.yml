@@ -1,5 +1,5 @@
 # Documentation Sidebar Menu
-# Tip: make sure paths end with a trailing '/', otherwise Jekyll may not recognize active pages.
+# Tip: make sure paths end with a trailing '/', otherwise active pages may not be recognized.
 
 categories:
   - title: General
@@ -8,6 +8,16 @@ categories:
         path: /docs/
       - title: Installation
         path: /docs/install/
+      - title: FAQ
+        path: /docs/FAQ/
+  - title: Documentation
+    pages:
+      - title: Commands
+        path: /docs/commands/
+      - title: Cheatsheet
+        path: /docs/cheatsheet/
+      - title: Settings
+        path: /docs/settings/
   - title: Customization
     pages:
       - title: Themes

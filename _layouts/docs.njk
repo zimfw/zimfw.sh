@@ -2,23 +2,27 @@
 layout: page
 ---
 
-<div class="container my-6">
-  <div class="columns is-desktop">
-    <div 
-      class="column is-3-desktop"
-    >
-      <div class="is-sticky-top px-2 pb-4">
-        {% include "menubar.njk" %}
+<section class="section">
+  <div class="container">
+    <div class="columns is-marginless is-desktop" style="max-width:100%">
+      <div 
+        class="column is-full-mobile is-3-desktop"
+      >
+        <div class="is-sticky-top px-2 pb-4">
+          {% include "menubar.njk" %}
+        </div>
       </div>
-    </div>
 
-    <div class="column is-9-desktop">
-      <div class="content mx-4">
-        <h1 class="title titled is-1">
-          {{ title }}
-        </h1>
-        {{ content | safe }}
+      <div class="column is-9-desktop">
+        <div class="mx-4">
+          <h1 class="title is-1">
+            {{ title }}
+          </h1>
+          <div class="content">
+            {{ content | safe }}
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>

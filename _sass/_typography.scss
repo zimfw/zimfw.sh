@@ -1,15 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
-.titled {
-  font-family: 'Merriweather', serif !important;
-  font-size: 58px !important;
-  font-weight: 400 !important;
-  line-height: 64px !important;
-}
-
-.subtitled {
-  font-family: 'Merriweather', serif !important;
-  font-size: 22px !important;
-  font-weight: 400 !important;
-  line-height: 36px !important;
-}
+$title-family: 'Merriweather', Garamond, 'Hoefler Text', 'Times New Roman', Times, serif;
+$subtitle-family: $title-family;
+$title-weight: 400;

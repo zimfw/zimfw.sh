@@ -1,9 +1,22 @@
 ---
 layout: page
 title: Home
-extraStyles: 
-  - "https://unpkg.com/aos@next/dist/aos.css"
 ---
+
+{% block extraStyles %}
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<style>
+.titled {
+  font-size: 58px !important;
+  line-height: 64px !important;
+}
+
+.subtitled {
+  font-size: 22px !important;
+  line-height: 36px !important;
+}
+</style>
+{% endblock %}
 
 <!-- Main Hero -->
 <section class="hero is-primary is-fullheight">
@@ -140,11 +153,12 @@ extraStyles:
           <div class="install">
             <div class="tabs is-boxed mb-0">
               <ul>
-                <li id="curlBtn" onclick="switchTabs('curl')" class="is-active"><a>with curl</a></li>
-                <li id="wgetBtn" onclick="switchTabs('wget')"><a>with wget</a></li>
+                <li id="curlBtn" onclick="openTab(event, 'curlTab')" class="tab is-active"><a>with curl</a></li>
+                <li id="wgetBtn" onclick="openTab(event, 'wgetTab')" class="tab"><a>with wget</a></li>
               </ul>
             </div>
-            <pre id="installCommand" class="has-background-dark has-text-white">curl -fsSL https://zimfw.sh/install.zsh | zsh</pre>
+            <pre id="curlTab" class="content-tab has-background-dark has-text-white">curl -fsSL https://zimfw.sh/install.zsh | zsh</pre>
+            <pre id="wgetTab" class="content-tab has-background-dark has-text-white" style="display:none">wget -nv -O - https://zimfw.sh/install.zsh | zsh</pre>
           </div>
         </div>
       </div>
@@ -167,19 +181,20 @@ extraStyles:
     once: true
   });
 </script>
+
+{# Function to switch between download urls since Bulma doesn't provide one #}
 <script>
-  function switchTabs(name) {
-    var curlBtn = document.getElementById('curlBtn');
-    var wgetBtn = document.getElementById('wgetBtn');
-    var command = document.getElementById('installCommand');
-    if (name === "wget") {
-      curlBtn.className = "";
-      wgetBtn.className = "is-active";
-      command.innerText = "wget -nv -O - https://zimfw.sh/install.zsh | zsh"
-    } else if (name === "curl") {
-      curlBtn.className = "is-active";
-      wgetBtn.className = "";
-      command.innerText = "curl -fsSL https://zimfw.sh/install.zsh | zsh"
+  function openTab(evt, tabName) {
+    var i, x, tablinks;
+    x = document.getElementsByClassName("content-tab");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
     }
+    tablinks = document.getElementsByClassName("tab");
+    for (i = 0; i < x.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" is-active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " is-active";
   }
 </script>

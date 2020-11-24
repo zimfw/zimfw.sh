@@ -11,3 +11,8 @@ To add a new page to the menu, edit `_data/docs_menu.yml` and add an entry.
 ```
 yarn serve
 ```
+
+### Build for production
+```
+yarn build
+```

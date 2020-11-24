@@ -4,12 +4,27 @@ layout: page
 
 <section class="section">
   <div class="container">
-    <div class="columns is-marginless is-desktop" style="max-width:100%">
-      <div 
-        class="column is-full-mobile is-3-desktop"
-      >
-        <div class="is-sticky-top px-2 pb-4">
+    <div class="columns is-marginless is-desktop">
+      <div class="column is-full-touch is-3-desktop">
+        {# Dropdown menu for sidebar on mobile #}
+        <div class="is-hidden-desktop">
+          <a 
+            role="button"
+            id="sidebarButton"
+            onclick="toggleSidebar()"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        {# The actual sidebar #}
+        <div id="sidebar" class="is-sticky-top px-2 pb-4 is-hidden-touch">
           {% include "menubar.njk" %}
+          <hr class="is-hidden-desktop" />
         </div>
       </div>
 
@@ -26,3 +41,14 @@ layout: page
     </div>
   </div>
 </section>
+
+{% block extraScripts %}
+  <script>
+    function toggleSidebar() {
+      const sidebarButton = document.getElementById('sidebarButton');
+      const sidebar = document.getElementById('sidebar');
+      sidebarButton.classList.toggle('is-active');
+      sidebar.classList.toggle('is-hidden-touch');
+    }
+  </script>
+{% endblock %}

@@ -18,6 +18,8 @@
   {{ content | safe }}
 
   {% include "footer.njk" %}
+
+  {% block extraScripts %}{% endblock %}
 </body>
 
 </html>

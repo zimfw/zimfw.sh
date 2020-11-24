@@ -1,4 +1,4 @@
-name: Build and deploy Jekyll site to GitHub Pages
+name: Build and deploy
 
 on:
   push:
@@ -24,7 +24,9 @@ jobs:
       
       # Builds site for production
       - name: Build site 🚧
-        run: yarn build
+        run: |
+          yarn build
+          cp CNAME _site/CNAME
         if: ${{ github.repository_owner == 'zimfw' }}
 
       # Builds the site on another repo (not zimfw.sh)

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modules | Zim: Modular, customizable, and blazing fast Zsh framework</title>
+
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/main.css" />
+  
+</head>
+
+<body>
+  <!-- Navigation -->
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item subtitled" href="/">
+        <img src="/images/logo.png" />
+      </a>
+    </div>
+
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        
+          <a 
+            class="navbar-item"
+            href="/docs/"
+            
+          >
+            
+            <span
+              
+            >
+              Docs
+            </span>
+          </a>
+        
+          <a 
+            class="navbar-item"
+            href="/docs/themes/"
+            
+          >
+            
+            <span
+              
+            >
+              Themes
+            </span>
+          </a>
+        
+          <a 
+            class="navbar-item"
+            href="/docs/modules/"
+            
+          >
+            
+            <span
+              
+            >
+              Modules
+            </span>
+          </a>
+        
+          <a 
+            class="navbar-item"
+            href="https://github.com/zimfw/zimfw"
+            target=_blank
+          >
+            
+              <i class="fa fa-github" aria-hidden="true"></i>
+            
+            <span
+              class=sr-only
+            >
+              GitHub
+            </span>
+          </a>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+  
+
+<style>
+  #editButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 25%;
+  }
+  #editButton:hover {
+    opacity: 100%;
+  }
+</style>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-marginless is-desktop">
+      <div class="column is-full-touch is-3-desktop">
+        
+        <div class="is-hidden-desktop">
+          <a 
+            role="button"
+            id="sidebarButton"
+            onclick="toggleSidebar()"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        
+        <div id="sidebar" class="is-sticky-top px-2 pb-4 is-hidden-touch">
+          <!-- Menu sidebar for navigation within the docs -->
+<aside class="menu">
+  
+  <p class="menu-label">
+    General
+  </p>
+  <ul class="menu-list">
+    
+      <li>
+        <a 
+          href="/docs/"
+          
+        >
+          Getting Started
+        </a>
+      </li>
+    
+      <li>
+        <a 
+          href="/docs/install/"
+          
+        >
+          Installation
+        </a>
+      </li>
+    
+      <li>
+        <a 
+          href="/docs/FAQ/"
+          
+        >
+          FAQ
+        </a>
+      </li>
+    
+  </ul>
+  
+  <p class="menu-label">
+    Documentation
+  </p>
+  <ul class="menu-list">
+    
+      <li>
+        <a 
+          href="/docs/commands/"
+          
+        >
+          Commands
+        </a>
+      </li>
+    
+      <li>
+        <a 
+          href="/docs/cheatsheet/"
+          
+        >
+          Cheatsheet
+        </a>
+      </li>
+    
+      <li>
+        <a 
+          href="/docs/settings/"
+          
+        >
+          Settings
+        </a>
+      </li>
+    
+  </ul>
+  
+  <p class="menu-label">
+    Customization
+  </p>
+  <ul class="menu-list">
+    
+      <li>
+        <a 
+          href="/docs/themes/"
+          
+        >
+          Themes
+        </a>
+      </li>
+    
+      <li>
+        <a 
+          href="/docs/modules/"
+          class="is-active"
+        >
+          Modules
+        </a>
+      </li>
+    
+  </ul>
+  
+</aside>
+          <hr class="is-hidden-desktop" />
+        </div>
+      </div>
+
+      <div class="column is-9-desktop">
+        <div class="mx-4 is-relative">
+          <h1 class="title is-1">
+            Modules
+          </h1>
+          <a 
+            id="editButton"
+            class="button is-small"
+            href="https://github.com/zimfw/zimfw.sh/blob/main/./docs/modules.md"
+            target="_blank"
+          >
+            <i class="fa fa-edit" aria-hidden="true"></i>
+          </a>
+          <div class="content">
+            <p>Zim alone won't change your Zsh experience! By enabling modules, you pick what features you want.</p>
+<p>A brief list of modules and their descriptions can be seen below. Clicking on the name of a module will take you to the full documentation for that module.</p>
+<p>Any <strong>bold</strong> module provides functionality that greatly enhances the user experience. These are recommended modules!</p>
+<h2>Behaviour</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/zimfw/completion"><strong>completion</strong></a></td>
+<td>Enables and configures smart and extensive tab completion.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/zimfw/environment"><strong>environment</strong></a></td>
+<td>Sets generic Zsh built-in environment options.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/zimfw/input"><strong>input</strong></a></td>
+<td>Applies correct bindkeys for input events.</td>
+</tr>
+</tbody>
+</table>
+<h2>Productivity</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/zimfw/archive">archive</a></td>
+<td>Provides archive and unarchive functions for easy archive manipulation.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/zimfw/git"><strong>git</strong></a></td>
+<td>Provides nice git aliases and functions.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/zimfw/git-info"><strong>git-info</strong></a></td>
+<td>Exposes git repository status information to prompts.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/zimfw/ssh">ssh</a></td>
+<td>Provides a convenient way to load ssh-agent.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/zimfw/termtitle"><strong>termtitle</strong></a></td>
+<td>Sets a custom terminal title.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/zimfw/utility"><strong>utility</strong></a></td>
+<td>Adds utility aliases and functions. Adds colour to <code>ls</code>, <code>grep</code> and <code>less</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2>Distro-specific</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/zimfw/homebrew">homebrew</a></td>
+<td>Adds aliases for Homebrew.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/zimfw/pacman">pacman</a></td>
+<td>Adds aliases for the pacman package manager.</td>
+</tr>
+</tbody>
+</table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <script>
+    function toggleSidebar() {
+      const sidebarButton = document.getElementById('sidebarButton');
+      const sidebar = document.getElementById('sidebar');
+      sidebarButton.classList.toggle('is-active');
+      sidebar.classList.toggle('is-hidden-touch');
+    }
+  </script>
+
+
+  <!-- Footer w/ copyright info -->
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Zim Framework</strong> by <a href="https://github.com/zimfw/zimfw/graphs/contributors" target="_blank">Eric Nielsen, Matt Hamilton and contributors</a>. The source code is licensed
+      <a href="http://opensource.org/licenses/mit-license.php" target="_blank">MIT</a>. This website's content
+      is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY NC SA 4.0</a>.
+    </p>
+    <a
+      class="button is-dark"
+      href="https://github.com/zimfw/zimfw"
+      target="_blank"
+    >
+      <i class="fa fa-github" aria-hidden="true"></i>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </div>
+</footer>
+
+  
+</body>
+
+</html>

@@ -1,8 +1,9 @@
 @charset "utf-8";
 
 @import "typography";
-@import "custom";
 
 @import "lumen/variables";
 @import "../node_modules/bulma/bulma.sass";
 @import "lumen/overrides";
+
+@import "custom";

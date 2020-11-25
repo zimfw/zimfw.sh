@@ -6,15 +6,17 @@ title: Home
 {% block extraStyles %}
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <style>
-  .titled {
-    font-size: 58px !important;
-    line-height: 64px !important;
-  }
-
-  .subtitled {
-    font-size: 22px !important;
-    line-height: 36px !important;
-  }
+    .titled {
+      font-size: 58px !important;
+      line-height: 64px !important;
+    }
+    .subtitled {
+      font-size: 22px !important;
+      line-height: 36px !important;
+    }
+    .hero-body .container .columns {
+      max-width: 100%;
+    }
   </style>
 {% endblock %}
 
@@ -28,7 +30,7 @@ title: Home
             Get Zim.
           </h1>
           <h2 class="subtitled subtitle is-4 has-text-weight-normal is-family-sans-serif">
-            The Zsh configuration framework with <b><a href="https://github.com/zimfw/zimfw/wiki/Speed" target="_blank">blazing speed</a></b> and <b><a href="https://github.com/zimfw/zimfw/wiki/Modules" target="_blank">modular extensions</a></b>.
+            The Zsh configuration framework with <b><a href="https://github.com/zimfw/zimfw/wiki/Speed" target="_blank">blazing speed</a></b> and <b><a href="{{ '/docs/modules/' | url }}">modular extensions</a></b>.
           </h2>
           <div class="buttons">
             <a
@@ -65,18 +67,18 @@ title: Home
     <div class="container">
       <div class="columns is-centered">
         <div data-aos="zoom-in-up" class="column is-8">
+          <figure class="image has-shadow mb-6">
+            <img 
+              src="{{ '/images/zim_feature.gif' | url }}"
+              alt="Zim features demo"
+            >
+          </figure>
           <h1 class="title titled is-1 mb-6">
             your terminal: <span id="typewriter"></span>
           </h1>
           <h2 class="subtitle subtitled">
             Zim bundles useful modules, a wide variety of themes, and plenty of customizability into a simple and super fast framework. 
           </h2>
-          <figure class="image has-shadow">
-            <img 
-              src="./images/zim_history-substring-search.gif"
-              alt="Zim substring search demo"
-            >
-          </figure>
         </div>
       </div>
 
@@ -88,24 +90,23 @@ title: Home
 <section class="hero is-medium">
   <div class="hero-body">
     <div class="container">
-      <div class="columns is-variable is-8 is-vcentered">
+      <div class="columns is-variable is-8 is-vcentered is-desktop">
         <div data-aos="fade-left" class="column">
-          <figure class="image has-shadow">
+          <figure class="image has-shadow mb-4">
             <img 
-              src="./images/zim_history-substring-search.gif"
+              src="{{ '/images/zim_autosuggestions_cropped.gif' | url }}"
               alt="Zim substring search demo"
             >
           </figure>
         </div>
         <div data-aos="fade-down" class="column">
           <h1 class="titled title is-1 mb-6">
-            predictive shell history
+            predictive suggestions
           </h1>
           <h2 class="subtitled subtitle">
-            Zim suggests commands as you type based on history and completions, allowing easy access to that thing you did yesterday but forgot already.
+            Zim suggests commands as you type based on your history and completions, allowing easy access to commands once lost and forgotten.
           </h2>
         </div>
-
       </div>
     </div>
   </div>
@@ -115,7 +116,7 @@ title: Home
 <section class="hero is-dark is-medium">
   <div class="hero-body">
     <div class="container">
-      <div class="columns is-variable is-8 is-vcentered reverse-columns">
+      <div class="columns is-variable is-8 is-vcentered is-desktop reverse-columns">
         <div data-aos="fade-right" class="column">
           <h1 class="title titled is-1 mb-6">
             helpful syntax highlighting
@@ -125,9 +126,9 @@ title: Home
           </h2>
         </div>
         <div data-aos="fade-down" class="column" data-aos="fade-up">
-          <figure class="image has-shadow">
+          <figure class="image has-shadow mb-4">
             <img 
-              src="./images/zim_syntax-highlighting.gif"
+              src="./images/zim_syntax-highlighting_cropped.gif"
               alt="Zim syntax highlighting demo"
             >
           </figure>

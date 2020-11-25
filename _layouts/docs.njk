@@ -1,0 +1,76 @@
+---
+layout: page
+---
+
+{% block extraStyles %}
+<style>
+  #editButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 25%;
+  }
+  #editButton:hover {
+    opacity: 100%;
+  }
+</style>
+{% endblock %}
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-marginless is-desktop">
+      <div class="column is-full-touch is-3-desktop">
+        {# Dropdown menu for sidebar on mobile #}
+        <div class="is-hidden-desktop">
+          <a 
+            role="button"
+            id="sidebarButton"
+            onclick="toggleSidebar()"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        {# The actual sidebar #}
+        <div id="sidebar" class="is-sticky-top px-2 pb-4 is-hidden-touch">
+          {% include "menubar.njk" %}
+          <hr class="is-hidden-desktop" />
+        </div>
+      </div>
+
+      <div class="column is-9-desktop">
+        <div class="mx-4 is-relative">
+          <h1 class="title is-1">
+            {{ title }}
+          </h1>
+          <a 
+            id="editButton"
+            class="button is-small"
+            href="https://github.com/zimfw/zimfw.sh/blob/main/{{ page.inputPath }}"
+            target="_blank"
+          >
+            <i class="fa fa-edit" aria-hidden="true"></i>
+          </a>
+          <div class="content">
+            {{ content | safe }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% block extraScripts %}
+  <script>
+    function toggleSidebar() {
+      const sidebarButton = document.getElementById('sidebarButton');
+      const sidebar = document.getElementById('sidebar');
+      sidebarButton.classList.toggle('is-active');
+      sidebar.classList.toggle('is-hidden-touch');
+    }
+  </script>
+{% endblock %}

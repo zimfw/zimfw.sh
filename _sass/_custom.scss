@@ -1,0 +1,30 @@
+html {
+  scroll-behavior: smooth;
+}
+
+@media(max-width: $desktop) {
+  .reverse-columns {
+    flex-direction: column-reverse;
+    display: flex;
+  }
+}
+
+.has-shadow {
+  filter: drop-shadow(5px 5px 12px #222);
+}
+
+.is-sticky-top {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1rem;
+}
+
+// Overflow fixes for docs
+.content {
+  overflow-wrap: break-word;
+}
+
+.content table {
+  overflow-x: auto;
+  display: block;
+}

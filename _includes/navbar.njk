@@ -1,0 +1,31 @@
+<!-- Navigation -->
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item subtitled" href="{{ "/" | url }}">
+        <img src="{{ "/images/logo.png" | url }}" />
+      </a>
+    </div>
+
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        {% for link in navbar.links %}
+          <a 
+            class="navbar-item"
+            href="{{ link.href | url }}"
+            {{ 'target=_blank' if link.type == "external" }}
+          >
+            {% if link.icon %}
+              <i class="fa {{ link.icon }}" aria-hidden="true"></i>
+            {% endif %}
+            <span
+              {{ 'class=sr-only' if link.icon }}
+            >
+              {{ link.name }}
+            </span>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</nav>

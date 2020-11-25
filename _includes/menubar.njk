@@ -1,0 +1,20 @@
+<!-- Menu sidebar for navigation within the docs -->
+<aside class="menu">
+  {% for category in docs_menu.categories %}
+  <p class="menu-label">
+    {{ category.title }}
+  </p>
+  <ul class="menu-list">
+    {% for singlePage in category.pages %}
+      <li>
+        <a 
+          href="{{ singlePage.path | url }}"
+          {% if page.url == singlePage.path %}class="is-active"{% endif %}
+        >
+          {{ singlePage.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+</aside>

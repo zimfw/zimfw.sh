@@ -2,6 +2,20 @@
 layout: page
 ---
 
+{% block extraStyles %}
+<style>
+  #editButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 25%;
+  }
+  #editButton:hover {
+    opacity: 100%;
+  }
+</style>
+{% endblock %}
+
 <section class="section">
   <div class="container">
     <div class="columns is-marginless is-desktop">
@@ -29,10 +43,18 @@ layout: page
       </div>
 
       <div class="column is-9-desktop">
-        <div class="mx-4">
+        <div class="mx-4 is-relative">
           <h1 class="title is-1">
             {{ title }}
           </h1>
+          <a 
+            id="editButton"
+            class="button is-small"
+            href="https://github.com/zimfw/zimfw.sh/blob/main/{{ page.inputPath }}"
+            target="_blank"
+          >
+            <i class="fa fa-edit" aria-hidden="true"></i>
+          </a>
           <div class="content">
             {{ content | safe }}
           </div>

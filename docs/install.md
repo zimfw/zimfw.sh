@@ -13,7 +13,7 @@ Installing Zim is easy:
       wget -nv -O - https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
 
 Open a new terminal and you're done! Enjoy your Zsh IMproved! Take some time to
-read about the [available modules] and tweak your `~/.zshrc` file.
+read about the [available modules](../modules) and tweak your `~/.zshrc` file.
 
 If you have a different shell framework installed (like oh-my-zsh or prezto),
 *uninstall those first to prevent conflicts*.

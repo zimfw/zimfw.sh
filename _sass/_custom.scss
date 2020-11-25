@@ -19,6 +19,12 @@ html {
   top: 1rem;
 }
 
-.content * {
+// Overflow fixes for docs
+.content {
   overflow-wrap: break-word;
+}
+
+.content table {
+  overflow-x: auto;
+  display: block;
 }

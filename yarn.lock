@@ -1599,6 +1599,16 @@ map-cache@^0.2.0:
   resolved "https://registry.yarnpkg.com/map-cache/-/map-cache-0.2.2.tgz#c32abd0bd6525d9b051645bb4f26ac5dc98a0dbf"
   integrity sha1-wyq9C9ZSXZsFFkW7TyasXcmKDb8=
 
+markdown-it-anchor@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/markdown-it-anchor/-/markdown-it-anchor-6.0.1.tgz#f54b78757d0b61455faf8ced775b39498bd6d6f9"
+  integrity sha512-8qX4r5R6AtXla9HKCouEQ40inw69O5jR4VUXlZySsBLxIXlsJ3Yi9JV6JWPU4ZdA8jWTGDDJjJYNLwQ0W4jCag==
+
+markdown-it-toc-done-right@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/markdown-it-toc-done-right/-/markdown-it-toc-done-right-4.2.0.tgz#3ccdce22d5022ffae7b991d07261b1b1de5459d0"
+  integrity sha512-UB/IbzjWazwTlNAX0pvWNlJS8NKsOQ4syrXZQ/C72j+jirrsjVRT627lCaylrKJFBQWfRsPmIVQie8x38DEhAQ==
+
 markdown-it@^10.0.0:
   version "10.0.0"
   resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-10.0.0.tgz#abfc64f141b1722d663402044e43927f1f50a8dc"

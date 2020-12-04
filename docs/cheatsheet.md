@@ -2,7 +2,13 @@
 title: Cheatsheet
 ---
 
-## Expressions
+<h1>Table of Contents</h1>
+
+[[toc]]
+
+---
+
+# Expressions
 
 | Expression        | Example             | Description                             |
 | ----------------- | ------------------- | --------------------------------------- |
@@ -15,14 +21,14 @@ title: Cheatsheet
 | `*(m0)`           | `rm *(m0)`          | Last modified today                     |
 | `*(m-4)`          |                     | Last modified <4 days ago               |
 
-## Process Substitution
+# Process Substitution
 
 | Expression   | Example                                       | Description                                                             |
 | ------------ | --------------------------------------------- | ----------------------------------------------------------------------- |
 | `<(COMMAND)` | `grep "needle" <(curl "https://haystack.io")` | Replace argument with *named pipe/FIFO* (read-only) with command output |
 | `=(COMMAND)` | `vim =(curl "https://haystack.io")`           | Replace argument with *file* (writable) containing command output       |
 
-## [Tab Completion](https://github.com/zimfw/completion)
+# [Tab Completion](https://github.com/zimfw/completion)
 
 | Provides helpful explanations for options and what they do. |
 | ----------------------------------------------------------- |
@@ -34,7 +40,7 @@ title: Cheatsheet
 | *kill (tab)*                                                |
 | *unrar (tab)*                                               |
 
-## [Utilities](https://github.com/zimfw/utility)
+# [Utilities](https://github.com/zimfw/utility)
 
 | Expression | Example                            | Description                                                              |
 | ---------- | ---------------------------------- | ------------------------------------------------------------------------ |
@@ -42,7 +48,7 @@ title: Cheatsheet
 | `mkcd`     | `mkcd ~/Projects`                  | Creates and changes to the given directory.                              |
 | `mkpw`     | `mkpw 32 0-9A-Za-z`                | Generates a random password with the given length and set of characters. |
 
-## [ls](https://github.com/zimfw/utility#ls)
+# [ls](https://github.com/zimfw/utility#ls)
 
 | Expression | Description                                                                        |
 | ---------- | ---------------------------------------------------------------------------------- |
@@ -56,14 +62,14 @@ title: Cheatsheet
 | `lt`       | lists sorted by newest modification time last.                                     |
 | `lc`       | lists sorted by newest status change (ctime) last.                                 |
 
-## [Archives](https://github.com/zimfw/archive) (requires module)
+# [Archives](https://github.com/zimfw/archive) (requires module)
 
 | Expression  | Example                                     | Description                                 |
 | ----------- | ------------------------------------------- | ------------------------------------------- |
 | `archive`   | `archive myarchive.tar.gz /path/to/archive` | Generate an archive based on file extension |
 | `unarchive` | `unarchive myarchive.7z`                    | Unarchive files based on file extension     |
 
-## [Git](https://github.com/zimfw/git)
+# [Git](https://github.com/zimfw/git)
 
 | Expression | Description    |
 | ---------- | -------------- |
@@ -296,7 +302,7 @@ title: Cheatsheet
 | `G..`      | changes the current directory to the top level of the working tree. |
 | `G?`       | looks up the aliases defined here (short for git-alias-lookup).     |
 
-## [Homebrew](https://github.com/zimfw/homebrew) (requires module)
+# [Homebrew](https://github.com/zimfw/homebrew) (requires module)
 
 | Expression | Description                                                            |
 | ---------- | ---------------------------------------------------------------------- |
@@ -317,7 +323,7 @@ title: Cheatsheet
 | `brewx`    | uninstalls a given formula.                                            |
 | `brewX`    | deletes all installed versions of given formula.                       |
 
-## [Pacman](https://github.com/zimfw/pacman) (requires module)
+# [Pacman](https://github.com/zimfw/pacman) (requires module)
 
 | Expression | Description                                                          |
 | ---------- | -------------------------------------------------------------------- |

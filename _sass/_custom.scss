@@ -28,3 +28,17 @@ html {
   overflow-x: auto;
   display: block;
 }
+
+.table-of-contents {
+  ol {
+    counter-reset: list-item;
+    margin-top: 0;
+  }
+  li {
+    display: block;
+    counter-increment: list-item;
+  }
+  li:before {
+    content: counters(list-item,'.') ' ';
+  }
+}

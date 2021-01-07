@@ -29,7 +29,7 @@ Actions:
   <b>version</b>         Print Zim version
 
 Options:
-  <b>-q</b>              Quiet, only outputs errors
+  <b>-q</b>              Quiet (yes to prompts, and only outputs errors)
   <b>-v</b>              Verbose
 </pre>
 
@@ -40,30 +40,30 @@ The modules are initialized in the same order they are defined.
 
 <pre>Usage: <b>zmodule</b> &lt;url&gt; [<b>-n</b>|<b>--name</b> &lt;module_name&gt;] [options]
 
-Add <b>zmodule</b> calls to your <b>/var/home/michael/.zimrc</b> file to define the modules to be initialized.
+Add <b>zmodule</b> calls to your <b>${ZDOTDIR:-${HOME}}/.zimrc</b> file to define the modules to be initialized.
 The modules are initialized in the same order they are defined.
 
-  &lt;url&gt;                          Module absolute path or repository URL. The following URL formats
-                                 are equivalent: <b>name</b>, <b>zimfw/name</b>, <b>https://github.com/zimfw/name.git</b>.
-  <b>-n</b>|<b>--name</b> &lt;module_name&gt;        Set a custom module name. Default: the last component in the &lt;url&gt;.
+  &lt;url&gt;                      Module absolute path or repository URL. The following URL formats
+                             are equivalent: <b>name</b>, <b>zimfw/name</b>, <b>https://github.com/zimfw/name.git</b>.
+  <b>-n</b>|<b>--name</b> &lt;module_name&gt;    Set a custom module name. Default: the last component in the &lt;url&gt;.
 
 Repository options:
-  <b>-b</b>|<b>--branch</b> &lt;branch_name&gt;      Use specified branch when installing and updating the module.
-                                 Overrides the tag option. Default: <b>master</b>.
-  <b>-t</b>|<b>--tag</b> &lt;tag_name&gt;            Use specified tag when installing and updating the module.
-                                 Overrides the branch option.
-  <b>-z</b>|<b>--frozen</b>                    Don&apos;t install or update the module.
+  <b>-b</b>|<b>--branch</b> &lt;branch_name&gt;  Use specified branch when installing and updating the module.
+                             Overrides the tag option. Default: the repository&apos;s default branch.
+  <b>-t</b>|<b>--tag</b> &lt;tag_name&gt;        Use specified tag when installing and updating the module.
+                             Overrides the branch option.
+  <b>-z</b>|<b>--frozen</b>                Don&apos;t install or update the module.
 
 Initialization options:
-  <b>-f</b>|<b>--fpath</b> &lt;path&gt;              Add specified path to fpath. The path is relative to the module
-                                 root directory. Default: <b>functions</b>, if the subdirectory exists.
-  <b>-a</b>|<b>--autoload</b> &lt;function_name&gt;  Autoload specified function. Default: all valid names inside the
-                                 module&apos;s specified fpath paths.
-  <b>-s</b>|<b>--source</b> &lt;file_path&gt;        Source specified file. The file path is relative to the module root
-                                 directory. Default: the file with largest size matching
-                                 <b>{init.zsh,module_name.{zsh,plugin.zsh,zsh-theme,sh}}</b>, if any exist.
-  <b>-c</b>|<b>--cmd</b> &lt;command&gt;             Execute specified command. Occurrences of the <b>{}</b> placeholder in the
-                                 command are substituted by the module root directory path.
-                                 <b>-s &apos;script.zsh&apos;</b> and <b>-c &apos;source {}/script.zsh&apos;</b> are equivalent.
-  <b>-d</b>|<b>--disabled</b>                  Don&apos;t initialize or uninstall the module.
+  <b>-f</b>|<b>--fpath</b> &lt;path&gt;          Add specified path to fpath. The path is relative to the module
+                             root directory. Default: <b>functions</b>, if the subdirectory exists.
+  <b>-a</b>|<b>--autoload</b> &lt;func_name&gt;  Autoload specified function. Default: all valid names inside the
+                             module&apos;s specified fpath paths.
+  <b>-s</b>|<b>--source</b> &lt;file_path&gt;    Source specified file. The file path is relative to the module root
+                             directory. Default: the file with largest size matching
+                             <b>{init.zsh,module_name.{zsh,plugin.zsh,zsh-theme,sh}}</b>, if any exist.
+  <b>-c</b>|<b>--cmd</b> &lt;command&gt;         Execute specified command. Occurrences of the <b>{}</b> placeholder in the
+                             command are substituted by the module root directory path.
+                             <b>-s &apos;script.zsh&apos;</b> and <b>-c &apos;source {}/script.zsh&apos;</b> are equivalent.
+  <b>-d</b>|<b>--disabled</b>              Don&apos;t initialize or uninstall the module.
 </pre>

@@ -14,4 +14,4 @@ The best way to remove Zim is to manually delete `~/.zim`, `~/.zimrc`, and remov
 
 #### How do I add modules?
 
-Simply edit your Zim config, installed by default at `~/.zimrc`, and add a line with the `zmodule` command followed by the module you wish to install. For more information, visit the [commands page](../commands) or type `zmodule --help` in your terminal. After adding the relevant lines to your `~/.zimrc`, run `zimfw install` to install the new modules and then restart your shell with `exec zsh`. 
+Simply edit your Zim config, installed by default at `~/.zimrc`, and add a line with the `zmodule` command followed by the module you wish to install. For more information about the `zmodule` options, visit the [commands page](../commands#zmodule). After adding the relevant lines to your `~/.zimrc`, run `zimfw install` to install the new modules and then restart your shell with `exec zsh`.

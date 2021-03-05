@@ -6,6 +6,10 @@ Here is a sample of themes. Add `zmodule <prompt>` to your .zimrc and run `zimfw
 
 ## Previews
 
+### [asciiship](https://github.com/zimfw/asciiship)
+
+<img width="706" src="https://zimfw.github.io/images/prompts/asciiship@2.png">
+
 ### [eriner](https://github.com/zimfw/eriner)
 
 <img width="706" src="https://zimfw.github.io/images/prompts/eriner@2.png">

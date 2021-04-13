@@ -22,12 +22,21 @@ Productivity
 | --------------------------------------------------- | --------------------------------------------------------------------------- |
 | [archive](https://github.com/zimfw/archive)         | Provides archive and unarchive functions for easy archive manipulation.     |
 | [exa](https://github.com/zimfw/exa)                 | Adds aliases and better defaults for exa.                                   |
+| [fzf](https://github.com/zimfw/fzf)                 | Configures fzf for faster fetching of files and directories names.          |
 | [git](https://github.com/zimfw/git)                 | Provides nice git aliases and functions.                                    |
-| [git-info](https://github.com/zimfw/git-info)       | Exposes git repository status information to prompts.                       |
+| [pvenv](https://github.com/zimfw/pvenv)             | Manages all python venvs in one place.                                      |
 | [ruby](https://github.com/zimfw/ruby)               | Provides ruby, bundler, rbenv and rvm aliases and initialization.           |
 | [ssh](https://github.com/zimfw/ssh)                 | Provides a convenient way to load ssh-agent.                                |
 | [termtitle](https://github.com/zimfw/termtitle)     | Sets a custom terminal title.                                               |
 | [utility](https://github.com/zimfw/utility)         | Adds utility aliases and functions. Adds colour to ls, grep and less.       |
+
+Prompt enhancement
+------------------
+
+| Name                                                    | Description                                                   |
+| ------------------------------------------------------- | ------------------------------------------------------------- |
+| [duration-info](https://github.com/zimfw/duration-info) | Exposes to prompts how long the last command took to execute. |
+| [git-info](https://github.com/zimfw/git-info)           | Exposes git repository status information to prompts.         |
 
 Distro-specific
 ---------------

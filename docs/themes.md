@@ -2,7 +2,7 @@
 title: Themes
 ---
 
-Here is a sample of themes. Add `zmodule <prompt>` to your .zimrc and run `zimfw install` to enable one of them.
+Here is a sample of themes. Add `zmodule <theme>` to your `~/.zimrc` and run `zimfw install` to enable one of them.
 
 ## Previews
 

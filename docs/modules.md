@@ -6,6 +6,8 @@ Zim alone won't change your Zsh experience! By enabling modules, you pick what f
 
 A brief list of modules and their descriptions can be seen below. Clicking on the name of a module will take you to the full documentation for that module.
 
+Add `zmodule <module>` to your `~/.zimrc` and run `zimfw install` to install it.
+
 Behaviour
 --------
 

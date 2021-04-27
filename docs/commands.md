@@ -60,7 +60,8 @@ Initialization options:
   <b>-a</b>|<b>--autoload</b> &lt;func_name&gt;  Autoload specified function. Default: all valid names inside the
                              module&apos;s specified fpath paths.
   <b>-s</b>|<b>--source</b> &lt;file_path&gt;    Source specified file. The file path is relative to the module root
-                             directory. Default: the file with largest size matching
+                             directory. Default: <b>init.zsh</b>, if the <b>functions</b> subdirectory also
+                             exists, or the file with largest size matching
                              <b>{init.zsh,module_name.{zsh,plugin.zsh,zsh-theme,sh}}</b>, if any exist.
   <b>-c</b>|<b>--cmd</b> &lt;command&gt;         Execute specified command. Occurrences of the <b>{}</b> placeholder in the
                              command are substituted by the module root directory path.

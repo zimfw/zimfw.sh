@@ -64,10 +64,11 @@ title: Cheatsheet
 
 # [Archives](https://github.com/zimfw/archive) (requires module)
 
-| Expression  | Example                                     | Description                                 |
-| ----------- | ------------------------------------------- | ------------------------------------------- |
-| `archive`   | `archive myarchive.tar.gz /path/to/archive` | Generate an archive based on file extension |
-| `unarchive` | `unarchive myarchive.7z`                    | Unarchive files based on file extension     |
+| Expression  | Example                                         | Description                                     |
+| ----------- | ----------------------------------------------- | ----------------------------------------------- |
+| `archive`   | `archive myarchive.tar.gz /path/to/be/archived` | Generate an archive based on file extension     |
+| `unarchive` | `unarchive *.tar.gz`                            | Unarchive files based on file extensions        |
+| `lsarchive` | `lsarchive *.tar.gz`                            | List archives contents based on file extensions |
 
 # [Git](https://github.com/zimfw/git)
 

@@ -22,6 +22,10 @@ Here is a sample of themes. Add `zmodule <theme>` to your `~/.zimrc` and run `zi
 
 <img width="706" src="https://zimfw.github.io/images/prompts/magicmace@2.png">
 
+### [Ansimorph/oblong](https://github.com/Ansimorph/oblong)
+
+<img width="706" src="https://raw.githubusercontent.com/Ansimorph/oblong/main/screenshot.png" alt="Oblong theme">
+
 ### [s1ck94](https://github.com/zimfw/s1ck94)
 
 <img width="706" src="https://zimfw.github.io/images/prompts/s1ck94@2.png">

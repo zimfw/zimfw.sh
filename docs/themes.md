@@ -4,6 +4,10 @@ title: Themes
 
 Here is a sample of themes. Add `zmodule <theme>` to your `~/.zimrc` and run `zimfw install` to enable one of them.
 
+Some themes require also installing [prompt enhancement modules](../modules/#prompt-enhancement) for them to work.
+So make sure to check the requirements of the theme you've chosen. They can be found in the full documentation for the
+theme, available when clicking on the name of the theme below.
+
 ## Previews
 
 ### [asciiship](https://github.com/zimfw/asciiship)

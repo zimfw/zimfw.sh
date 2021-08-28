@@ -40,6 +40,7 @@ Prompt enhancement
 | ------------------------------------------------------- | ------------------------------------------------------------- |
 | [duration-info](https://github.com/zimfw/duration-info) | Exposes to prompts how long the last command took to execute. |
 | [git-info](https://github.com/zimfw/git-info)           | Exposes git repository status information to prompts.         |
+| [prompt-pwd](https://github.com/zimfw/prompt-pwd)       | Formats the current working directory to be used by prompts.  |
 
 Distro-specific
 ---------------

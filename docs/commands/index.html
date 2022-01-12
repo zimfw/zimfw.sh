@@ -269,6 +269,7 @@ Actions:
   <b>info</b>            Print Zim and system info.
   <b>list</b>            List all modules currently defined in <b>~/.zimrc</b>. Use <b>-v</b> to also see the mod-
                   ules details.
+  <b>init</b>            Same as <b>install</b>, but with output tailored to be used at terminal startup.
   <b>install</b>         Install new modules. Also does <b>build</b> and <b>compile</b>. Use <b>-v</b> to also see their
                   output, and see skipped modules.
   <b>uninstall</b>       Delete unused modules. Prompts for confirmation. Use <b>-q</b> for quiet uninstall.
@@ -286,19 +287,19 @@ Options:
 in the same order they are defined.</p>
 <p>Below are some usage examples:</p>
 <ul>
-<li>A module from the <a href="https://github.com/zimfw">zimfw</a> organization: <code>zmodule archive</code></li>
+<li>A module from the <a href="https://github.com/zimfw">@zimfw</a> organization: <code>zmodule archive</code></li>
 <li>A module from another GitHub organization: <code>zmodule StackExchange/blackbox</code></li>
 <li>A module with a custom URL: <code>zmodule https://gitlab.com/Spriithy/basher.git</code></li>
 <li>A module at an absolute path, that is already installed:
 <code>zmodule /usr/local/share/zsh-autosuggestions</code></li>
 <li>A module with a custom fpath: <code>zmodule zsh-users/zsh-completions --fpath src</code></li>
-<li>A module with a custom initialization file name:
+<li>A module with a custom initialization file:
 <code>zmodule spaceship-prompt/spaceship-prompt --source spaceship.zsh</code> or
 <code>zmodule spaceship-prompt/spaceship-prompt --name spaceship</code></li>
 <li>A module with two custom initialization files:
 <code>zmodule sindresorhus/pure --source async.zsh --source pure.zsh</code></li>
-<li>A module with custom initialization commands:
-<code>zmodule skywind3000/z.lua --cmd 'export _ZL_HYPHEN=1' --cmd 'eval &quot;$(lua {}/z.lua --init zsh enhanced once)&quot;'</code></li>
+<li>A module with a custom initialization command:
+<code>zmodule skywind3000/z.lua --cmd 'eval &quot;$(lua {}/z.lua --init zsh enhanced once)&quot;'</code></li>
 <li>A module with a big git repository: <code>zmodule romkatv/powerlevel10k --use degit</code></li>
 </ul>
 <pre>Usage: <b>zmodule</b> &lt;url&gt; [<b>-n</b>|<b>--name</b> &lt;module_name&gt;] [options]

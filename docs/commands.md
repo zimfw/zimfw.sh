@@ -26,6 +26,7 @@ Actions:
   <b>info</b>            Print Zim and system info.
   <b>list</b>            List all modules currently defined in <b>~/.zimrc</b>. Use <b>-v</b> to also see the mod-
                   ules details.
+  <b>init</b>            Same as <b>install</b>, but with output tailored to be used at terminal startup.
   <b>install</b>         Install new modules. Also does <b>build</b> and <b>compile</b>. Use <b>-v</b> to also see their
                   output, and see skipped modules.
   <b>uninstall</b>       Delete unused modules. Prompts for confirmation. Use <b>-q</b> for quiet uninstall.
@@ -46,19 +47,19 @@ in the same order they are defined.
 
 Below are some usage examples:
 
-  * A module from the [zimfw] organization: `zmodule archive`
+  * A module from the [@zimfw] organization: `zmodule archive`
   * A module from another GitHub organization: `zmodule StackExchange/blackbox`
   * A module with a custom URL: `zmodule https://gitlab.com/Spriithy/basher.git`
   * A module at an absolute path, that is already installed:
     `zmodule /usr/local/share/zsh-autosuggestions`
   * A module with a custom fpath: `zmodule zsh-users/zsh-completions --fpath src`
-  * A module with a custom initialization file name:
+  * A module with a custom initialization file:
     `zmodule spaceship-prompt/spaceship-prompt --source spaceship.zsh` or
     `zmodule spaceship-prompt/spaceship-prompt --name spaceship`
   * A module with two custom initialization files:
     `zmodule sindresorhus/pure --source async.zsh --source pure.zsh`
-  * A module with custom initialization commands:
-    `zmodule skywind3000/z.lua --cmd 'export _ZL_HYPHEN=1' --cmd 'eval "$(lua {}/z.lua --init zsh enhanced once)"'`
+  * A module with a custom initialization command:
+    `zmodule skywind3000/z.lua --cmd 'eval "$(lua {}/z.lua --init zsh enhanced once)"'`
   * A module with a big git repository: `zmodule romkatv/powerlevel10k --use degit`
 
 <pre>Usage: <b>zmodule</b> &lt;url&gt; [<b>-n</b>|<b>--name</b> &lt;module_name&gt;] [options]
@@ -105,4 +106,4 @@ Initialization options:
   all automatic, or all manual.
 </pre>
 
-[zimfw]: https://github.com/zimfw
+[@zimfw]: https://github.com/zimfw

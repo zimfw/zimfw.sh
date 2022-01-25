@@ -248,7 +248,7 @@
           </a>
           <div class="content">
             <h1>Table of Contents</h1>
-<nav class="table-of-contents"><ol><li><a href="#expressions">Expressions</a></li><li><a href="#process-substitution">Process Substitution</a></li><li><a href="#tab-completion">Tab Completion</a></li><li><a href="#utilities">Utilities</a></li><li><a href="#ls">ls</a></li><li><a href="#archives-(requires-module)">Archives (requires module)</a></li><li><a href="#git">Git</a><ol><li><a href="#branch">Branch</a></li><li><a href="#commit">Commit</a></li><li><a href="#conflict">Conflict</a></li><li><a href="#data">Data</a></li><li><a href="#fetch">Fetch</a></li><li><a href="#grep">Grep</a></li><li><a href="#index">Index</a></li><li><a href="#log">Log</a></li><li><a href="#merge">Merge</a></li><li><a href="#push">Push</a></li><li><a href="#rebase">Rebase</a></li><li><a href="#remote">Remote</a></li><li><a href="#stash">Stash</a></li><li><a href="#submodule">Submodule</a></li><li><a href="#tag">Tag</a></li><li><a href="#working-tree">Working Tree</a></li><li><a href="#misc">Misc</a></li></ol></li><li><a href="#homebrew-(requires-module)">Homebrew (requires module)</a><ol><li><a href="#homebrew-cask">Homebrew cask</a></li></ol></li><li><a href="#pacman-(requires-module)">Pacman (requires module)</a><ol><li><a href="#aur-helpers">aur helpers</a></li></ol></li></ol></nav><hr>
+<nav class="table-of-contents"><ol><li><a href="#expressions">Expressions</a></li><li><a href="#process-substitution">Process Substitution</a></li><li><a href="#tab-completion">Tab Completion</a></li><li><a href="#utilities">Utilities</a></li><li><a href="#ls">ls</a></li><li><a href="#archives-(requires-module)">Archives (requires module)</a></li><li><a href="#git">Git</a><ol><li><a href="#branch">Branch</a></li><li><a href="#commit">Commit</a></li><li><a href="#conflict">Conflict</a></li><li><a href="#data">Data</a></li><li><a href="#fetch">Fetch</a></li><li><a href="#grep">Grep</a></li><li><a href="#index">Index</a></li><li><a href="#log">Log</a></li><li><a href="#merge">Merge</a></li><li><a href="#push">Push</a></li><li><a href="#rebase">Rebase</a></li><li><a href="#remote">Remote</a></li><li><a href="#stash">Stash</a></li><li><a href="#submodule">Submodule</a></li><li><a href="#tag">Tag</a></li><li><a href="#main-working-tree">Main working tree</a></li><li><a href="#working-trees">Working trees</a></li><li><a href="#misc">Misc</a></li></ol></li><li><a href="#homebrew-(requires-module)">Homebrew (requires module)</a><ol><li><a href="#homebrew-cask">Homebrew Cask</a></li></ol></li><li><a href="#pacman-(requires-module)">Pacman (requires module)</a><ol><li><a href="#aur-helpers">aur helpers</a></li></ol></li></ol></nav><hr>
 <h1 id="expressions">Expressions</h1>
 <table>
 <thead>
@@ -355,1108 +355,297 @@
 </tbody>
 </table>
 <h1 id="utilities"><a href="https://github.com/zimfw/utility">Utilities</a></h1>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Example</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>get</code></td>
-<td><code>get https://zimfw.sh/install.zsh</code></td>
-<td>Downloads the specified file using <code>aria2c</code>, <code>axel</code>,  <code>wget</code>, or <code>curl</code>.</td>
-</tr>
-<tr>
-<td><code>mkcd</code></td>
-<td><code>mkcd ~/Projects</code></td>
-<td>Creates and changes to the given directory.</td>
-</tr>
-<tr>
-<td><code>mkpw</code></td>
-<td><code>mkpw 32 0-9A-Za-z</code></td>
-<td>Generates a random password with the given length and set of characters.</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li><code>get</code> downloads from the given URL using <code>aria2c</code>, <code>axel</code>, <code>wget</code> or <code>curl</code>.</li>
+<li><code>mkcd</code> creates and changes to the given directory.</li>
+<li><code>mkpw</code> generates a random password with the given length and set of characters.</li>
+</ul>
 <h1 id="ls"><a href="https://github.com/zimfw/utility#ls">ls</a></h1>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>ls</code></td>
-<td>lists directories first (GNU only) and with colour (applies to all aliases below).</td>
-</tr>
-<tr>
-<td><code>ll</code></td>
-<td>lists with long format and human-readable sizes (applies to all aliases below).</td>
-</tr>
-<tr>
-<td><code>l</code></td>
-<td>lists all files.</td>
-</tr>
-<tr>
-<td><code>lm</code></td>
-<td>lists all files using pager.</td>
-</tr>
-<tr>
-<td><code>lr</code></td>
-<td>lists recursively.</td>
-</tr>
-<tr>
-<td><code>lx</code></td>
-<td>lists sorted by extension (GNU only).</td>
-</tr>
-<tr>
-<td><code>lk</code></td>
-<td>lists sorted by largest file size last.</td>
-</tr>
-<tr>
-<td><code>lt</code></td>
-<td>lists sorted by newest modification time last.</td>
-</tr>
-<tr>
-<td><code>lc</code></td>
-<td>lists sorted by newest status change (ctime) last.</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li><code>ls</code> lists directories first (GNU only) and with colour (applies to all aliases below).</li>
+<li><code>ll</code> lists with long format and human-readable sizes (applies to all aliases below).</li>
+<li><code>l</code>  lists all files.</li>
+<li><code>lm</code> lists all files using pager.</li>
+<li><code>lr</code> lists recursively.</li>
+<li><code>lx</code> lists sorted by extension (GNU only).</li>
+<li><code>lk</code> lists sorted by largest file size last.</li>
+<li><code>lt</code> lists sorted by newest modification time last.</li>
+<li><code>lc</code> lists sorted by newest status change (ctime) last.</li>
+</ul>
 <h1 id="archives-(requires-module)"><a href="https://github.com/zimfw/archive">Archives</a> (requires module)</h1>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Example</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>archive</code></td>
-<td><code>archive myarchive.tar.gz /path/to/be/archived</code></td>
-<td>Generate an archive based on file extension</td>
-</tr>
-<tr>
-<td><code>unarchive</code></td>
-<td><code>unarchive *.tar.gz</code></td>
-<td>Unarchive files based on file extensions</td>
-</tr>
-<tr>
-<td><code>lsarchive</code></td>
-<td><code>lsarchive *.tar.gz</code></td>
-<td>List archives contents based on file extensions</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li><code>archive</code> generates an archive based on file extension.</li>
+<li><code>unarchive</code> unarchives files based on the extensions.</li>
+<li><code>lsarchive</code> lists archives contents based on the extensions.</li>
+</ul>
 <h1 id="git"><a href="https://github.com/zimfw/git">Git</a></h1>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>G</code></td>
-<td>short for git.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="branch">Branch</h4>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Gb</code></td>
-<td>lists, creates, renames, and deletes branches.</td>
-</tr>
-<tr>
-<td><code>Gbc</code></td>
-<td>creates a new branch.</td>
-</tr>
-<tr>
-<td><code>Gbl</code></td>
-<td>lists branches and their commits.</td>
-</tr>
-<tr>
-<td><code>GbL</code></td>
-<td>lists local and remote branches and their commits.</td>
-</tr>
-<tr>
-<td><code>Gbm</code></td>
-<td>renames a branch.</td>
-</tr>
-<tr>
-<td><code>GbM</code></td>
-<td>renames a branch even if the new branch name already exists.</td>
-</tr>
-<tr>
-<td><code>Gbs</code></td>
-<td>lists branches and their commits with ancestry graphs.</td>
-</tr>
-<tr>
-<td><code>GbS</code></td>
-<td>lists local and remote branches and their commits with ancestry graphs.</td>
-</tr>
-<tr>
-<td><code>Gbx</code></td>
-<td>deletes a branch.</td>
-</tr>
-<tr>
-<td><code>GbX</code></td>
-<td>deletes a branch irrespective of its merged status.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="commit">Commit</h4>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Gc</code></td>
-<td>records changes to the repository.</td>
-</tr>
-<tr>
-<td><code>Gca</code></td>
-<td>commits all modified and deleted files.</td>
-</tr>
-<tr>
-<td><code>GcA</code></td>
-<td>commits all modified and deleted files interactivly.</td>
-</tr>
-<tr>
-<td><code>Gcm</code></td>
-<td>commits with the given message.</td>
-</tr>
-<tr>
-<td><code>Gco</code></td>
-<td>checks out a branch or paths to the working tree.</td>
-</tr>
-<tr>
-<td><code>GcO</code></td>
-<td>checks out hunks from the index or the tree interactively.</td>
-</tr>
-<tr>
-<td><code>Gcf</code></td>
-<td>amends the tip of the current branch reusing the same log message as HEAD.</td>
-</tr>
-<tr>
-<td><code>GcF</code></td>
-<td>amends the tip of the current branch.</td>
-</tr>
-<tr>
-<td><code>Gcp</code></td>
-<td>applies changes introduced by existing commits.</td>
-</tr>
-<tr>
-<td><code>GcP</code></td>
-<td>applies changes introduced by existing commits without committing.</td>
-</tr>
-<tr>
-<td><code>Gcr</code></td>
-<td>reverts existing commits by reverting patches and recording new commits.</td>
-</tr>
-<tr>
-<td><code>GcR</code></td>
-<td>removes the HEAD commit.</td>
-</tr>
-<tr>
-<td><code>Gcs</code></td>
-<td>shows one or more objects (blobs, trees, tags and commits).</td>
-</tr>
-<tr>
-<td><code>GcS</code></td>
-<td>commits with GPG signature.</td>
-</tr>
-<tr>
-<td><code>Gcu</code></td>
-<td>commits with fixup message using given commit.</td>
-</tr>
-<tr>
-<td><code>GcU</code></td>
-<td>commits with squash message using given commit.</td>
-</tr>
-<tr>
-<td><code>Gcv</code></td>
-<td>verifies the GPG signature of commits.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="conflict">Conflict</h4>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>GCl</code></td>
-<td>lists unmerged files.</td>
-</tr>
-<tr>
-<td><code>GCa</code></td>
-<td>adds unmerged file contents to the index.</td>
-</tr>
-<tr>
-<td><code>GCe</code></td>
-<td>executes merge-tool on all unmerged files.</td>
-</tr>
-<tr>
-<td><code>GCo</code></td>
-<td>checks out our changes for unmerged paths.</td>
-</tr>
-<tr>
-<td><code>GCO</code></td>
-<td>checks out our changes for all unmerged paths.</td>
-</tr>
-<tr>
-<td><code>GCt</code></td>
-<td>checks out their changes for unmerged paths.</td>
-</tr>
-<tr>
-<td><code>GCT</code></td>
-<td>checks out their changes for all unmerged paths.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="data">Data</h4>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Gd</code></td>
-<td>displays information about files in the index and the work tree.</td>
-</tr>
-<tr>
-<td><code>Gdc</code></td>
-<td>lists cached files.</td>
-</tr>
-<tr>
-<td><code>Gdx</code></td>
-<td>lists deleted files.</td>
-</tr>
-<tr>
-<td><code>Gdm</code></td>
-<td>lists modified files.</td>
-</tr>
-<tr>
-<td><code>Gdu</code></td>
-<td>lists untracked files.</td>
-</tr>
-<tr>
-<td><code>Gdk</code></td>
-<td>lists killed files.</td>
-</tr>
-<tr>
-<td><code>Gdi</code></td>
-<td>lists ignored files.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="fetch">Fetch</h4>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Gf</code></td>
-<td>downloads objects and references from another repository.</td>
-</tr>
-<tr>
-<td><code>Gfc</code></td>
-<td>clones a repository into a new directory.</td>
-</tr>
-<tr>
-<td><code>Gfm</code></td>
-<td>fetches from and merges with another repository or local branch.</td>
-</tr>
-<tr>
-<td><code>Gfr</code></td>
-<td>fetches from and rebases on top of another repository or local branch.</td>
-</tr>
-<tr>
-<td><code>Gfu</code></td>
-<td>removes unexisting remote-tracking references, fetches all remotes and merges.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="grep">Grep</h4>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Gg</code></td>
-<td>displays lines matching a pattern.</td>
-</tr>
-<tr>
-<td><code>Ggi</code></td>
-<td>displays lines matching a pattern ignoring case.</td>
-</tr>
-<tr>
-<td><code>Ggl</code></td>
-<td>lists files matching a pattern.</td>
-</tr>
-<tr>
-<td><code>GgL</code></td>
-<td>lists files that are not matching a pattern.</td>
-</tr>
-<tr>
-<td><code>Ggv</code></td>
-<td>displays lines not matching a pattern.</td>
-</tr>
-<tr>
-<td><code>Ggw</code></td>
-<td>displays lines matching a pattern at word boundary.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="index">Index</h4>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Gia</code></td>
-<td>adds file contents to the index.</td>
-</tr>
-<tr>
-<td><code>GiA</code></td>
-<td>adds file contents to the index interactively.</td>
-</tr>
-<tr>
-<td><code>Giu</code></td>
-<td>adds file contents to the index (updates only known files).</td>
-</tr>
-<tr>
-<td><code>Gid</code></td>
-<td>displays changes between the index and a named commit (diff).</td>
-</tr>
-<tr>
-<td><code>GiD</code></td>
-<td>displays changes between the index and a named commit (word diff).</td>
-</tr>
-<tr>
-<td><code>Gir</code></td>
-<td>resets the current HEAD to the specified state.</td>
-</tr>
-<tr>
-<td><code>GiR</code></td>
-<td>resets the current index interactively.</td>
-</tr>
-<tr>
-<td><code>Gix</code></td>
-<td>removes files from the index (recursively).</td>
-</tr>
-<tr>
-<td><code>GiX</code></td>
-<td>removes files from the index (recursively and forced).</td>
-</tr>
-</tbody>
-</table>
-<h4 id="log">Log</h4>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Gl</code></td>
-<td>displays the log.</td>
-</tr>
-<tr>
-<td><code>Gls</code></td>
-<td>displays the stats log.</td>
-</tr>
-<tr>
-<td><code>Gld</code></td>
-<td>displays the diff log.</td>
-</tr>
-<tr>
-<td><code>Glf</code></td>
-<td>displays the diff log of a given file, continuing beyond renames.</td>
-</tr>
-<tr>
-<td><code>Glo</code></td>
-<td>displays the one line log.</td>
-</tr>
-<tr>
-<td><code>GlO</code></td>
-<td>displays the one line log with authors and dates.</td>
-</tr>
-<tr>
-<td><code>Glg</code></td>
-<td>displays the graph log.</td>
-</tr>
-<tr>
-<td><code>GlG</code></td>
-<td>displays the graph log with authors and dates.</td>
-</tr>
-<tr>
-<td><code>Glv</code></td>
-<td>displays the log, verifying the GPG signature of commits.</td>
-</tr>
-<tr>
-<td><code>Glc</code></td>
-<td>displays the commit count for each contributor in descending order.</td>
-</tr>
-<tr>
-<td><code>Glr</code></td>
-<td>manages reflog information.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="merge">Merge</h4>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Gm</code></td>
-<td>joins two or more development histories together.</td>
-</tr>
-<tr>
-<td><code>Gma</code></td>
-<td>aborts the conflict resolution, and reconstructs the pre-merge state.</td>
-</tr>
-<tr>
-<td><code>GmC</code></td>
-<td>performs the merge but does not commit.</td>
-</tr>
-<tr>
-<td><code>GmF</code></td>
-<td>creates a merge commit even if the merge could be resolved as a fast-forward.</td>
-</tr>
-<tr>
-<td><code>GmS</code></td>
-<td>performs the merge and GPG-signs the resulting commit.</td>
-</tr>
-<tr>
-<td><code>Gmv</code></td>
-<td>verifies the GPG signature of the tip commit of the side branch being merged.</td>
-</tr>
-<tr>
-<td><code>Gmt</code></td>
-<td>runs the merge conflict resolution tools to resolve conflicts.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="push">Push</h4>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Gp</code></td>
-<td>updates remote refs along with associated objects.</td>
-</tr>
-<tr>
-<td><code>Gpf</code></td>
-<td>forces a push safely (with &quot;lease&quot;).</td>
-</tr>
-<tr>
-<td><code>GpF</code></td>
-<td>forces a push.</td>
-</tr>
-<tr>
-<td><code>Gpa</code></td>
-<td>pushes all branches.</td>
-</tr>
-<tr>
-<td><code>GpA</code></td>
-<td>pushes all branches and tags.</td>
-</tr>
-<tr>
-<td><code>Gpt</code></td>
-<td>pushes all tags.</td>
-</tr>
-<tr>
-<td><code>Gpc</code></td>
-<td>pushes the current branch and adds origin as an upstream reference for it.</td>
-</tr>
-<tr>
-<td><code>Gpp</code></td>
-<td>pulls and pushes the current branch from origin to origin.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="rebase">Rebase</h4>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Gr</code></td>
-<td>forward-ports local commits to the updated upstream head.</td>
-</tr>
-<tr>
-<td><code>Gra</code></td>
-<td>aborts the rebase.</td>
-</tr>
-<tr>
-<td><code>Grc</code></td>
-<td>continues the rebase after merge conflicts are resolved.</td>
-</tr>
-<tr>
-<td><code>Gri</code></td>
-<td>makes a list of commits to be rebased and opens the editor.</td>
-</tr>
-<tr>
-<td><code>Grs</code></td>
-<td>skips the current patch.</td>
-</tr>
-<tr>
-<td><code>GrS</code></td>
-<td>rebases and GPG-signs the commits.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="remote">Remote</h4>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>GR</code></td>
-<td>manages tracked repositories.</td>
-</tr>
-<tr>
-<td><code>GRl</code></td>
-<td>lists remote names and their URLs.</td>
-</tr>
-<tr>
-<td><code>GRa</code></td>
-<td>adds a new remote.</td>
-</tr>
-<tr>
-<td><code>GRx</code></td>
-<td>removes a remote.</td>
-</tr>
-<tr>
-<td><code>GRm</code></td>
-<td>renames a remote.</td>
-</tr>
-<tr>
-<td><code>GRu</code></td>
-<td>fetches remotes updates.</td>
-</tr>
-<tr>
-<td><code>GRp</code></td>
-<td>prunes all stale remote tracking branches.</td>
-</tr>
-<tr>
-<td><code>GRs</code></td>
-<td>shows information about a given remote.</td>
-</tr>
-<tr>
-<td><code>GRS</code></td>
-<td>changes URLs for a remote.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="stash">Stash</h4>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Gs</code></td>
-<td>stashes the changes of the dirty working directory.</td>
-</tr>
-<tr>
-<td><code>Gsa</code></td>
-<td>applies the changes recorded in a stash to the working directory.</td>
-</tr>
-<tr>
-<td><code>Gsx</code></td>
-<td>drops a stashed state.</td>
-</tr>
-<tr>
-<td><code>GsX</code></td>
-<td>drops all the stashed states.</td>
-</tr>
-<tr>
-<td><code>Gsl</code></td>
-<td>lists stashed states.</td>
-</tr>
-<tr>
-<td><code>Gsd</code></td>
-<td>displays changes between the stash and its original parent.</td>
-</tr>
-<tr>
-<td><code>Gsp</code></td>
-<td>removes and applies a single stashed state from the stash list.</td>
-</tr>
-<tr>
-<td><code>Gsr</code></td>
-<td>recovers a given stashed state.</td>
-</tr>
-<tr>
-<td><code>Gss</code></td>
-<td>stashes the working directory changes, including untracked files.</td>
-</tr>
-<tr>
-<td><code>GsS</code></td>
-<td>stashes the working directory changes interactively.</td>
-</tr>
-<tr>
-<td><code>Gsw</code></td>
-<td>stashes the working directory changes retaining the index.</td>
-</tr>
-<tr>
-<td><code>Gsu</code></td>
-<td>unapplies (reverts) applied changes.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="submodule">Submodule</h4>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>GS</code></td>
-<td>initializes, updates, or inspects submodules.</td>
-</tr>
-<tr>
-<td><code>GSa</code></td>
-<td>adds given a repository as a submodule.</td>
-</tr>
-<tr>
-<td><code>GSf</code></td>
-<td>evaluates a shell command in each of checked out submodules.</td>
-</tr>
-<tr>
-<td><code>GSi</code></td>
-<td>initializes submodules.</td>
-</tr>
-<tr>
-<td><code>GSI</code></td>
-<td>initializes and clones submodules recursively.</td>
-</tr>
-<tr>
-<td><code>GSl</code></td>
-<td>lists the commits of all submodules.</td>
-</tr>
-<tr>
-<td><code>GSm</code></td>
-<td>moves a submodule.</td>
-</tr>
-<tr>
-<td><code>GSs</code></td>
-<td>synchronizes remote URL of submodules to the value specified in .gitmodules.</td>
-</tr>
-<tr>
-<td><code>GSu</code></td>
-<td>fetches and merges the latest remote changes for all submodules.</td>
-</tr>
-<tr>
-<td><code>GSx</code></td>
-<td>removes a submodule.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="tag">Tag</h4>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Gt</code></td>
-<td>creates, lists, deletes or verifies a tag object signed with GPG.</td>
-</tr>
-<tr>
-<td><code>Gts</code></td>
-<td>creates a GPG-signed tag.</td>
-</tr>
-<tr>
-<td><code>Gtv</code></td>
-<td>verifies the GPG signature of tags.</td>
-</tr>
-<tr>
-<td><code>Gtx</code></td>
-<td>deletes tags with given names.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="working-tree">Working Tree</h4>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Gws</code></td>
-<td>displays working-tree status in the short format.</td>
-</tr>
-<tr>
-<td><code>GwS</code></td>
-<td>displays working-tree status.</td>
-</tr>
-<tr>
-<td><code>Gwd</code></td>
-<td>displays changes between the working tree and the index (diff).</td>
-</tr>
-<tr>
-<td><code>GwD</code></td>
-<td>displays changes between the working tree and the index (word diff).</td>
-</tr>
-<tr>
-<td><code>Gwr</code></td>
-<td>resets the current HEAD to the specified state, does not touch the index nor the working tree.</td>
-</tr>
-<tr>
-<td><code>GwR</code></td>
-<td>resets the current HEAD, index and working tree to the specified state.</td>
-</tr>
-<tr>
-<td><code>Gwc</code></td>
-<td>cleans untracked files from the working tree (dry-run).</td>
-</tr>
-<tr>
-<td><code>GwC</code></td>
-<td>cleans untracked files from the working tree.</td>
-</tr>
-<tr>
-<td><code>Gwm</code></td>
-<td>moves or renames files.</td>
-</tr>
-<tr>
-<td><code>GwM</code></td>
-<td>moves or renames files (forced).</td>
-</tr>
-<tr>
-<td><code>Gwx</code></td>
-<td>removes files from the working tree and from the index (recursively).</td>
-</tr>
-<tr>
-<td><code>GwX</code></td>
-<td>removes files from the working tree and from the index (recursively and forced).</td>
-</tr>
-</tbody>
-</table>
-<h4 id="misc">Misc</h4>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>G..</code></td>
-<td>changes the current directory to the top level of the working tree.</td>
-</tr>
-<tr>
-<td><code>G?</code></td>
-<td>looks up the aliases defined here (short for git-alias-lookup).</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li><code>G</code> is short for <code>git</code>.</li>
+</ul>
+<h3 id="branch">Branch</h3>
+<ul>
+<li><code>Gb</code> lists, creates, renames, and deletes branches.</li>
+<li><code>Gbc</code> creates a new branch.</li>
+<li><code>Gbd</code> detaches <em>HEAD</em> at the tip of the current or given branch.</li>
+<li><code>Gbl</code> lists branches and their commits.</li>
+<li><code>GbL</code> lists local and remote branches and their commits.</li>
+<li><code>Gbm</code> renames a branch.</li>
+<li><code>GbM</code> renames a branch even if the new branch name already exists.</li>
+<li><code>Gbs</code> lists branches and their commits with ancestry graphs.</li>
+<li><code>GbS</code> lists local and remote branches and their commits with ancestry graphs.</li>
+<li><code>Gbu</code> unsets the remote-tracking information for the current or given branch.</li>
+<li><code>GbG</code> deletes all local branches tracking remote branches that are gone.</li>
+<li><code>Gbx</code> deletes a branch.</li>
+<li><code>GbX</code> deletes a branch irrespective of its merged status.</li>
+</ul>
+<h3 id="commit">Commit</h3>
+<ul>
+<li><code>Gc</code> records changes to the repository.</li>
+<li><code>Gca</code> commits all modified and deleted files.</li>
+<li><code>GcA</code> commits all modified and deleted files interactively.</li>
+<li><code>Gcm</code> commits with the given message.</li>
+<li><code>Gco</code> checks out a branch or paths to the working tree.</li>
+<li><code>GcO</code> checks out hunks from the index or the tree interactively.</li>
+<li><code>Gcf</code> amends the tip of the current branch reusing the same log message as <em>HEAD</em>.</li>
+<li><code>GcF</code> amends the tip of the current branch.</li>
+<li><code>Gcp</code> applies changes introduced by existing commits.</li>
+<li><code>GcP</code> applies changes introduced by existing commits without committing.</li>
+<li><code>Gcr</code> reverts existing commits by reverting patches and recording new commits.</li>
+<li><code>GcR</code> removes the <em>HEAD</em> commit.</li>
+<li><code>Gcs</code> shows one or more objects (blobs, trees, tags and commits).</li>
+<li><code>GcS</code> commits with GPG signature.</li>
+<li><code>Gcu</code> commits with fixup message using given commit.</li>
+<li><code>GcU</code> commits with squash message using given commit.</li>
+<li><code>Gcv</code> verifies the GPG signature of commits.</li>
+</ul>
+<h3 id="conflict">Conflict</h3>
+<ul>
+<li><code>GCl</code> lists unmerged files.</li>
+<li><code>GCa</code> adds unmerged file contents to the index.</li>
+<li><code>GCe</code> executes merge-tool on all unmerged files.</li>
+<li><code>GCo</code> checks out our changes for unmerged paths.</li>
+<li><code>GCO</code> checks out our changes for all unmerged paths.</li>
+<li><code>GCt</code> checks out their changes for unmerged paths.</li>
+<li><code>GCT</code> checks out their changes for all unmerged paths.</li>
+</ul>
+<h3 id="data">Data</h3>
+<ul>
+<li><code>Gd</code> displays information about files in the index and the work tree.</li>
+<li><code>Gdc</code> lists cached files.</li>
+<li><code>Gdx</code> lists deleted files.</li>
+<li><code>Gdm</code> lists modified files.</li>
+<li><code>Gdu</code> lists untracked files.</li>
+<li><code>Gdk</code> lists killed files.</li>
+<li><code>Gdi</code> lists ignored files.</li>
+</ul>
+<h3 id="fetch">Fetch</h3>
+<ul>
+<li><code>Gf</code> downloads objects and references from another repository.</li>
+<li><code>Gfc</code> clones a repository into a new directory.</li>
+<li><code>Gfm</code> fetches from and merges with another repository or local branch.</li>
+<li><code>Gfr</code> fetches from and rebases on top of another repository or local branch.</li>
+<li><code>Gfu</code> prunes stale remote-tracking branches, fetches all remotes and merges.</li>
+</ul>
+<h3 id="grep">Grep</h3>
+<ul>
+<li><code>Gg</code> displays lines matching a pattern.</li>
+<li><code>Ggi</code> displays lines matching a pattern ignoring case.</li>
+<li><code>Ggl</code> lists files matching a pattern.</li>
+<li><code>GgL</code> lists files that are not matching a pattern.</li>
+<li><code>Ggv</code> displays lines not matching a pattern.</li>
+<li><code>Ggw</code> displays lines matching a pattern at word boundary.</li>
+</ul>
+<h3 id="index">Index</h3>
+<ul>
+<li><code>Gia</code> adds file contents to the index.</li>
+<li><code>GiA</code> adds file contents to the index interactively.</li>
+<li><code>Giu</code> adds file contents to the index (updates only known files).</li>
+<li><code>Gid</code> displays changes between the index and a named commit (diff).</li>
+<li><code>GiD</code> displays changes between the index and a named commit (word diff).</li>
+<li><code>Gir</code> resets the current <em>HEAD</em> to the specified state.</li>
+<li><code>GiR</code> resets the current index interactively.</li>
+<li><code>Gix</code> removes files from the index (recursively).</li>
+<li><code>GiX</code> removes files from the index (recursively and forced).</li>
+</ul>
+<h3 id="log">Log</h3>
+<ul>
+<li><code>Gl</code> displays the log.</li>
+<li><code>Gls</code> displays the stats log.</li>
+<li><code>Gld</code> displays the diff log.</li>
+<li><code>Glf</code> displays the diff log of a given file, continuing beyond renames.</li>
+<li><code>Glo</code> displays the one line log.</li>
+<li><code>GlO</code> displays the one line log with authors and dates.</li>
+<li><code>Glg</code> displays the graph log.</li>
+<li><code>GlG</code> displays the graph log with authors and dates.</li>
+<li><code>Glv</code> displays the log, verifying the GPG signature of commits.</li>
+<li><code>Glc</code> displays the commit count for each contributor in descending order.</li>
+<li><code>Glr</code> manages reflog information.</li>
+</ul>
+<h3 id="merge">Merge</h3>
+<ul>
+<li><code>Gm</code> joins two or more development histories together.</li>
+<li><code>Gma</code> aborts the conflict resolution, and reconstructs the pre-merge state.</li>
+<li><code>Gmc</code> continues the merge after conflicts are resolved.</li>
+<li><code>GmC</code> performs the merge but does not commit.</li>
+<li><code>GmF</code> creates a merge commit even if the merge could be resolved as a fast-forward.</li>
+<li><code>GmS</code> performs the merge and GPG-signs the resulting commit.</li>
+<li><code>Gmv</code> verifies the GPG signature of the tip commit of the side branch being merged.</li>
+<li><code>Gmt</code> runs the merge conflict resolution tools to resolve conflicts.</li>
+</ul>
+<h3 id="push">Push</h3>
+<ul>
+<li><code>Gp</code> updates remote refs along with associated objects.</li>
+<li><code>Gpf</code> forces a push safely (with &quot;lease&quot;).</li>
+<li><code>GpF</code> forces a push.</li>
+<li><code>Gpa</code> pushes all branches.</li>
+<li><code>GpA</code> pushes all branches and tags.</li>
+<li><code>Gpt</code> pushes all tags.</li>
+<li><code>Gpc</code> pushes the current branch and adds <em>origin</em> as an upstream reference for it.</li>
+<li><code>Gpp</code> pulls and pushes the current branch from <em>origin</em> to <em>origin</em>.</li>
+</ul>
+<h3 id="rebase">Rebase</h3>
+<ul>
+<li><code>Gr</code> forward-ports local commits to the updated upstream head.</li>
+<li><code>Gra</code> aborts the rebase, and checks out the original branch.</li>
+<li><code>Grc</code> continues the rebase after merge conflicts are resolved.</li>
+<li><code>Gri</code> makes a list of commits to be rebased and opens the editor.</li>
+<li><code>Grs</code> skips the current patch.</li>
+<li><code>GrS</code> rebases and GPG-signs the commits.</li>
+</ul>
+<h3 id="remote">Remote</h3>
+<ul>
+<li><code>GR</code> manages tracked repositories.</li>
+<li><code>GRl</code> lists remote names and their URLs.</li>
+<li><code>GRa</code> adds a new remote.</li>
+<li><code>GRx</code> removes a remote.</li>
+<li><code>GRm</code> renames a remote.</li>
+<li><code>GRu</code> fetches remotes updates.</li>
+<li><code>GRp</code> prunes all stale remote-tracking branches.</li>
+<li><code>GRs</code> shows information about a given remote.</li>
+<li><code>GRS</code> changes URLs for a remote.</li>
+</ul>
+<h3 id="stash">Stash</h3>
+<ul>
+<li><code>Gs</code> stashes the changes of the dirty working directory.</li>
+<li><code>Gsa</code> applies the changes recorded in a stash to the working directory.</li>
+<li><code>Gsx</code> drops a stashed state.</li>
+<li><code>GsX</code> drops all the stashed states.</li>
+<li><code>Gsl</code> lists stashed states.</li>
+<li><code>Gsd</code> displays changes between the stash and its original parent.</li>
+<li><code>Gsp</code> removes and applies a single stashed state from the stash list.</li>
+<li><code>Gsr</code> recovers a given stashed state.</li>
+<li><code>Gss</code> stashes the working directory changes, including untracked files.</li>
+<li><code>GsS</code> stashes the working directory changes interactively.</li>
+<li><code>Gsw</code> stashes the working directory changes retaining the index.</li>
+<li><code>Gsu</code> unapplies (reverts) applied changes.</li>
+</ul>
+<h3 id="submodule">Submodule</h3>
+<ul>
+<li><code>GS</code> initializes, updates, or inspects submodules.</li>
+<li><code>GSa</code> adds given a repository as a submodule.</li>
+<li><code>GSf</code> evaluates a shell command in each of checked out submodules.</li>
+<li><code>GSi</code> initializes submodules.</li>
+<li><code>GSI</code> initializes and clones submodules recursively.</li>
+<li><code>GSl</code> lists the commits of all submodules.</li>
+<li><code>GSm</code> moves a submodule.</li>
+<li><code>GSs</code> synchronizes remote URL of submodules to the value specified in <code>.gitmodules</code>.</li>
+<li><code>GSu</code> fetches and merges the latest remote changes for all submodules.</li>
+<li><code>GSx</code> removes a submodule.</li>
+</ul>
+<h3 id="tag">Tag</h3>
+<ul>
+<li><code>Gt</code> creates, lists, deletes or verifies a tag object signed with GPG.</li>
+<li><code>Gts</code> creates a GPG-signed tag.</li>
+<li><code>Gtv</code> verifies the GPG signature of tags.</li>
+<li><code>Gtx</code> deletes tags with given names.</li>
+</ul>
+<h3 id="main-working-tree">Main working tree</h3>
+<ul>
+<li><code>Gws</code> displays the working tree status in short format.</li>
+<li><code>GwS</code> displays the working tree status.</li>
+<li><code>Gwd</code> displays changes between the working tree and the index (diff).</li>
+<li><code>GwD</code> displays changes between the working tree and the index (word diff).</li>
+<li><code>Gwr</code> resets the current <em>HEAD</em> to the specified state, does not touch the index nor the working tree.</li>
+<li><code>GwR</code> resets the current <em>HEAD</em>, index and working tree to the specified state.</li>
+<li><code>Gwc</code> cleans untracked files from the working tree (dry-run).</li>
+<li><code>GwC</code> cleans untracked files from the working tree.</li>
+<li><code>Gwm</code> moves or renames files.</li>
+<li><code>GwM</code> moves or renames files (forced).</li>
+<li><code>Gwx</code> removes files from the working tree and from the index (recursively).</li>
+<li><code>GwX</code> removes files from the working tree and from the index (recursively and forced).</li>
+</ul>
+<h3 id="working-trees">Working trees</h3>
+<ul>
+<li><code>GW</code> manages multiple working trees.</li>
+<li><code>GWa</code> creates path with a new working tree.</li>
+<li><code>GWl</code> lists details of all working trees.</li>
+<li><code>GWm</code> moves a working tree to a new location.</li>
+<li><code>GWp</code> prunes working tree information.</li>
+<li><code>GWx</code> removes a working tree.</li>
+</ul>
+<h3 id="misc">Misc</h3>
+<ul>
+<li><code>G..</code> changes the current directory to the top level of the working tree.</li>
+<li><code>G?</code> looks up the aliases defined here with the given regular expressions.</li>
+</ul>
 <h1 id="homebrew-(requires-module)"><a href="https://github.com/zimfw/homebrew">Homebrew</a> (requires module)</h1>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>brewc</code></td>
-<td>cleans the cache.</td>
-</tr>
-<tr>
-<td><code>brewC</code></td>
-<td>scrubs the cache, including downloads for the latest versions.</td>
-</tr>
-<tr>
-<td><code>brewd</code></td>
-<td>checks your system for potential problems.</td>
-</tr>
-<tr>
-<td><code>brewe</code></td>
-<td>edits given formula.</td>
-</tr>
-<tr>
-<td><code>brewi</code></td>
-<td>shows information about given formula.</td>
-</tr>
-<tr>
-<td><code>brewI</code></td>
-<td>installs given formula.</td>
-</tr>
-<tr>
-<td><code>brewl</code></td>
-<td>lists installed formulae.</td>
-</tr>
-<tr>
-<td><code>brewL</code></td>
-<td>lists installed formulae that don't depend on other installed formula.</td>
-</tr>
-<tr>
-<td><code>brewo</code></td>
-<td>lists outdated installed formulae.</td>
-</tr>
-<tr>
-<td><code>brewr</code></td>
-<td>reinstalls given formula.</td>
-</tr>
-<tr>
-<td><code>brews</code></td>
-<td>performs a search of formula names.</td>
-</tr>
-<tr>
-<td><code>brewS</code></td>
-<td>manages background services with macOS' launchctl daemon manager.</td>
-</tr>
-<tr>
-<td><code>brewu</code></td>
-<td>updates Homebrew and all formulae.</td>
-</tr>
-<tr>
-<td><code>brewU</code></td>
-<td>upgrades outdated and unpinned formulae.</td>
-</tr>
-<tr>
-<td><code>brewx</code></td>
-<td>uninstalls a given formula.</td>
-</tr>
-<tr>
-<td><code>brewX</code></td>
-<td>deletes all installed versions of given formula.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="homebrew-cask">Homebrew cask</h4>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>cask</code></td>
-<td>is short for <code>brew cask</code>.</td>
-</tr>
-<tr>
-<td><code>caske</code></td>
-<td>edits given cask.</td>
-</tr>
-<tr>
-<td><code>caski</code></td>
-<td>shows information about given cask.</td>
-</tr>
-<tr>
-<td><code>caskI</code></td>
-<td>installs given cask.</td>
-</tr>
-<tr>
-<td><code>caskl</code></td>
-<td>lists installed casks.</td>
-</tr>
-<tr>
-<td><code>casko</code></td>
-<td>lists outdated installed casks.</td>
-</tr>
-<tr>
-<td><code>caskr</code></td>
-<td>reinstalls given cask.</td>
-</tr>
-<tr>
-<td><code>casks</code></td>
-<td>performs a search of cask tokens.</td>
-</tr>
-<tr>
-<td><code>caskU</code></td>
-<td>upgrades given cask or all outdated casks, if none given.</td>
-</tr>
-<tr>
-<td><code>caskx</code></td>
-<td>uninstalls given cask.</td>
-</tr>
-<tr>
-<td><code>caskX</code></td>
-<td>uninstalls even if given cask does not appear to be present.</td>
-</tr>
-<tr>
-<td><code>caskz</code></td>
-<td>zaps all files associated with given cask.</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li><code>brewc</code> cleans the cache.</li>
+<li><code>brewC</code> scrubs the cache, including downloads for the latest versions.</li>
+<li><code>brewd</code> checks your system for potential problems.</li>
+<li><code>brewe</code> edits given formula.</li>
+<li><code>brewi</code> shows information about given formula.</li>
+<li><code>brewI</code> installs given formula.</li>
+<li><code>brewl</code> lists installed formulae.</li>
+<li><code>brewL</code> lists installed formulae that don't depend on other installed formula.</li>
+<li><code>brewo</code> lists outdated installed formulae.</li>
+<li><code>brewr</code> reinstalls given formula.</li>
+<li><code>brews</code> performs a search of formula names.</li>
+<li><code>brewS</code> manages background services with macOS' launchctl daemon manager.</li>
+<li><code>brewu</code> updates Homebrew and all formulae.</li>
+<li><code>brewU</code> upgrades outdated and unpinned formulae.</li>
+<li><code>brewx</code> uninstalls a given formula.</li>
+<li><code>brewX</code> deletes all installed versions of given formula.</li>
+</ul>
+<h3 id="homebrew-cask">Homebrew Cask</h3>
+<ul>
+<li><code>cask</code> is short for <code>brew cask</code>.</li>
+<li><code>caske</code> edits given cask.</li>
+<li><code>caski</code> shows information about given cask.</li>
+<li><code>caskI</code> installs given cask.</li>
+<li><code>caskl</code> lists installed casks.</li>
+<li><code>casko</code> lists outdated installed casks.</li>
+<li><code>caskr</code> reinstalls given cask.</li>
+<li><code>casks</code> performs a search of cask tokens.</li>
+<li><code>caskU</code> upgrades given cask or all outdated casks, if none given.</li>
+<li><code>caskx</code> uninstalls given cask.</li>
+<li><code>caskX</code> uninstalls even if given cask does not appear to be present.</li>
+<li><code>caskz</code> zaps all files associated with given cask.</li>
+</ul>
 <h1 id="pacman-(requires-module)"><a href="https://github.com/zimfw/pacman">Pacman</a> (requires module)</h1>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>pacb</code></td>
-<td>build package in the current directory, cleanup, and install.</td>
-</tr>
-<tr>
-<td><code>paci</code></td>
-<td>install, sync, and upgrade packages.</td>
-</tr>
-<tr>
-<td><code>pacu</code></td>
-<td>install, sync, and upgrade packages (forcibly refresh package list).</td>
-</tr>
-<tr>
-<td><code>pacU</code></td>
-<td>install packages from pkg file.</td>
-</tr>
-<tr>
-<td><code>pacd</code></td>
-<td>install all packages in current directory.</td>
-</tr>
-<tr>
-<td><code>pacr</code></td>
-<td>remove package and unneeded dependencies.</td>
-</tr>
-<tr>
-<td><code>pacrm</code></td>
-<td>remove package, unneded dependencies, and configuration files.</td>
-</tr>
-<tr>
-<td><code>pacq</code></td>
-<td>query package information from remote repository</td>
-</tr>
-<tr>
-<td><code>pacQ</code></td>
-<td>query package information from local repository</td>
-</tr>
-<tr>
-<td><code>pacs</code></td>
-<td>search for package in the remote repository</td>
-</tr>
-<tr>
-<td><code>pacS</code></td>
-<td>search for package in the local repository</td>
-</tr>
-<tr>
-<td><code>pacol</code></td>
-<td>list orphan packages</td>
-</tr>
-<tr>
-<td><code>pacor</code></td>
-<td>remove all orphan packages</td>
-</tr>
-<tr>
-<td><code>pacown</code></td>
-<td>list all files provided by a given package</td>
-</tr>
-<tr>
-<td><code>pacblame</code></td>
-<td>show package(s) that own a specified file</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li><code>pacb</code> builds package in the current directory, cleanups, and installs.</li>
+<li><code>paci</code> installs, syncs, and upgrades packages.</li>
+<li><code>pacu</code> installs, syncs, and upgrades packages (forcibly refreshes package list).</li>
+<li><code>pacU</code> installs packages from pkg file.</li>
+<li><code>pacd</code> installs all packages in current directory.</li>
+<li><code>pacr</code> removes package and unneeded dependencies.</li>
+<li><code>pacrm</code> removes package, unneeded dependencies, and configuration files.</li>
+<li><code>pacq</code> queries package information from remote repository.</li>
+<li><code>pacQ</code> queries package information from local repository.</li>
+<li><code>pacs</code> searches for package in the remote repository.</li>
+<li><code>pacS</code> searches for package in the local repository.</li>
+<li><code>pacol</code> lists orphan packages.</li>
+<li><code>pacor</code> removes all orphan packages.</li>
+<li><code>pacown</code> lists all files provided by a given package.</li>
+<li><code>pacblame</code> shows packages that own a specified file.</li>
+</ul>
 <h4 id="aur-helpers">aur helpers</h4>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Example</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>aurb</code></td>
-<td><code>aurb package_name</code></td>
-<td>clone the package from the AUR, build, and install.</td>
-</tr>
-<tr>
-<td><code>aurd</code></td>
-<td><code>aurd package_name</code></td>
-<td>clone the package from the AUR, but do not build.</td>
-</tr>
-<tr>
-<td><code>auru</code></td>
-<td><code>auru</code></td>
-<td>run inside a directory created with <code>aurb</code>, this will update, build, and install a package.</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li><code>aurb</code> clones the given package name from the AUR, builds, and installs.</li>
+<li><code>aurd</code> clones the given package name from the AUR, but does not build.</li>
+<li><code>auru</code> from a directory created with <code>aurb</code>, will update, build, and install the package.</li>
+</ul>
 
           </div>
         </div>

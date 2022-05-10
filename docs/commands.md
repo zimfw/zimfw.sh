@@ -2,49 +2,18 @@
 title: Commands
 ---
 
-<!-- The fact that this formatting works is a miracle, though it's probably best not to touch it -->
+The `zimfw` plugin manager builds an initialization script, at `${ZIM_HOME}/init.zsh`,
+that initializes the modules you defined in your `~/.zimrc` file.
 
-### zimfw
+The `~/.zimrc` file must contain a `zmodule` call for each module you want to
+use. The modules will be initialized in the order they are defined.
 
-The command line utility for Zim:
+The `~/.zimrc` file is not sourced during Zsh startup, and it's only used to
+configure the `zimfw` plugin manager.
 
-  * Added new modules to `~/.zimrc`? Run `zimfw install`.
-  * Removed modules from `~/.zimrc`? Run `zimfw uninstall`.
-  * Want to update your modules to their latest revisions? Run `zimfw update`.
-  * Want to upgrade `zimfw` to its latest version? Run `zimfw upgrade`.
-
-<pre>Usage: <b>zimfw</b> &lt;action&gt; [<b>-q</b>|<b>-v</b>]
-
-Actions:
-  <b>build</b>           Build <b>${ZIM_HOME}/init.zsh</b> and <b>${ZIM_HOME}/login_init.zsh</b>.
-                  Also does <b>check-dumpfile</b> and <b>compile</b>. Use <b>-v</b> to also see their output.
-  <b>check-dumpfile</b>  Does <b>clean-dumpfile</b> if new completion configuration needs to be dumped.
-  <b>clean</b>           Clean all. Does both <b>clean-compiled</b> and <b>clean-dumpfile</b>.
-  <b>clean-compiled</b>  Clean Zsh compiled files.
-  <b>clean-dumpfile</b>  Clean completion dumpfile.
-  <b>compile</b>         Compile Zsh files.
-  <b>help</b>            Print this help.
-  <b>info</b>            Print Zim and system info.
-  <b>list</b>            List all modules currently defined in <b>~/.zimrc</b>. Use <b>-v</b> to also see the mod-
-                  ules details.
-  <b>init</b>            Same as <b>install</b>, but with output tailored to be used at terminal startup.
-  <b>install</b>         Install new modules. Also does <b>build</b>, <b>check-dumpfile</b> and <b>compile</b>. Use <b>-v</b> to
-                  also see their output, and see skipped modules.
-  <b>uninstall</b>       Delete unused modules. Prompts for confirmation. Use <b>-q</b> for quiet uninstall.
-  <b>update</b>          Update current modules. Also does <b>build</b>, <b>check-dumpfile</b> and <b>compile</b>. Use <b>-v</b>
-                  to also see their output, and see skipped modules.
-  <b>upgrade</b>         Upgrade zimfw. Also does <b>compile</b>. Use <b>-v</b> to also see its output.
-  <b>version</b>         Print zimfw version.
-
-Options:
-  <b>-q</b>              Quiet (yes to prompts, and only outputs errors)
-  <b>-v</b>              Verbose (outputs more details)
-</pre>
-
+Check [examples of `~/.zimrc` files in the installation page](../install/#create-~%2F.zimrc).
 
 ### zmodule
-Called within your `~/.zimrc` to define the modules to be initialized. The modules are initialized
-in the same order they are defined.
 
 Below are some usage examples:
 
@@ -61,6 +30,8 @@ Below are some usage examples:
     `zmodule sindresorhus/pure --source async.zsh --source pure.zsh`
   * A module with a custom initialization command:
     `zmodule skywind3000/z.lua --cmd 'eval "$(lua {}/z.lua --init zsh enhanced once)"'`
+  * A module with an on-pull command. It can be used to create a cached initialization script:
+    `zmodule skywind3000/z.lua --on-pull 'lua z.lua --init zsh enhanced once >! init.zsh'`
   * A module with a big git repository: `zmodule romkatv/powerlevel10k --use degit`
 
 <pre>Usage: <b>zmodule</b> &lt;url&gt; [<b>-n</b>|<b>--name</b> &lt;module_name&gt;] [options]
@@ -88,7 +59,8 @@ Repository options:
                              changes are lost on updates. Git submodules are not supported.
   <b>--no-submodules</b>            Don&apos;t install or update git submodules.
   <b>-z</b>|<b>--frozen</b>                Don&apos;t install or update the module.
-
+  <b>--on-pull</b> &lt;command&gt;        Execute command after installing or updating the module. The com-
+                             mand is executed in the module root directory.
 Initialization options:
   <b>-f</b>|<b>--fpath</b> &lt;path&gt;          Add specified path to fpath. The path is relative to the module
                              root directory. Default: <b>functions</b>, if the subdirectory exists.
@@ -106,6 +78,43 @@ Initialization options:
   Setting any initialization option above will disable all the default values from the other
   initialization options, so only your provided values are used. I.e. these values are either
   all automatic, or all manual.
+</pre>
+
+### zimfw
+
+The Zim plugin manager:
+
+  * Added new modules to `~/.zimrc`? Run `zimfw install`.
+  * Removed modules from `~/.zimrc`? Run `zimfw uninstall`.
+  * Want to update your modules to their latest revisions? Run `zimfw update`.
+  * Want to upgrade `zimfw` to its latest version? Run `zimfw upgrade`.
+
+<pre>Usage: <b>zimfw</b> &lt;action&gt; [<b>-q</b>|<b>-v</b>]
+
+Actions:
+  <b>build</b>           Build <b>${ZIM_HOME}/init.zsh</b> and <b>${ZIM_HOME}/login_init.zsh</b>.
+                  Also does <b>check-dumpfile</b> and <b>compile</b>. Use <b>-v</b> to also see their output.
+  <b>check-dumpfile</b>  Does <b>clean-dumpfile</b> if new completion configuration needs to be dumped.
+  <b>clean</b>           Clean all. Does both <b>clean-compiled</b> and <b>clean-dumpfile</b>.
+  <b>clean-compiled</b>  Clean Zsh compiled files.
+  <b>clean-dumpfile</b>  Clean completion dumpfile.
+  <b>compile</b>         Compile Zsh files.
+  <b>help</b>            Print this help.
+  <b>info</b>            Print Zim and system info.
+  <b>list</b>            List all modules currently defined in <b>~/.zimrc</b>. Use <b>-v</b> to also see the mod-
+                  ules details.
+  <b>init</b>            Same as <b>install</b>, but with output tailored to be used at terminal startup.
+  <b>install</b>         Install new modules. Also does <b>build</b>, <b>check-dumpfile</b> and <b>compile</b>. Use <b>-v</b> to
+                  also see their output, any on-pull output, and see skipped modules.
+  <b>uninstall</b>       Delete unused modules. Prompts for confirmation. Use <b>-q</b> for quiet uninstall.
+  <b>update</b>          Update current modules. Also does <b>build</b>, <b>check-dumpfile</b> and <b>compile</b>. Use <b>-v</b>
+                  to also see their output, any on-pull output, and see skipped modules.
+  <b>upgrade</b>         Upgrade zimfw. Also does <b>compile</b>. Use <b>-v</b> to also see its output.
+  <b>version</b>         Print zimfw version.
+
+Options:
+  <b>-q</b>              Quiet (yes to prompts, and only outputs errors)
+  <b>-v</b>              Verbose (outputs more details)
 </pre>
 
 [@zimfw]: https://github.com/zimfw

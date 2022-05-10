@@ -247,41 +247,124 @@
             <i class="fa fa-edit" aria-hidden="true"></i>
           </a>
           <div class="content">
-            <p>Installing Zim is easy:</p>
+            <p>Installing Zim is easy. You can choose either the automatic or manual method below:</p>
+<h3 id="automatic-installation">Automatic installation</h3>
+<p>This will install a predefined set of modules and a theme for you.</p>
 <ul>
 <li>
-<p>With curl:</p>
+<p>With <code>curl</code>:</p>
 <pre><code>curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
 </code></pre>
 </li>
 <li>
-<p>With wget:</p>
+<p>With <code>wget</code>:</p>
 <pre><code>wget -nv -O - https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
 </code></pre>
 </li>
 </ul>
-<p>Open a new terminal and you're done. Enjoy your Zsh IMproved! Take some time to
-tweak your <code>~/.zshrc</code> file, and to also check the available <a href="../modules">modules</a> and <a href="../themes">themes</a>
-you can add to your <code>~/.zimrc</code>.</p>
+<p>Restart your terminal and you're done. Enjoy your Zsh IMproved! Take some time
+to tweak your <a href="#set-up-~%2F.zshrc"><code>~/.zshrc</code></a> file, and to also check the available
+<a href="../modules">modules</a> and <a href="../themes">themes</a> you can add to your <a href="#create-~%2F.zimrc"><code>~/.zimrc</code></a>.</p>
 <h3 id="manual-installation">Manual installation</h3>
 <ol>
 <li>
-<p>Set Zsh as the default shell:</p>
-<pre><code>chsh -s $(which zsh)
+<p>Set Zsh as the default shell, if you haven't done so already:</p>
+<pre><code class="language-zsh">chsh -s $(which zsh)
 </code></pre>
 </li>
 <li>
-<p>Prepend the lines in the following templates to the respective dot files:</p>
-<ul>
-<li><a href="https://raw.githubusercontent.com/zimfw/install/master/src/templates/zshrc">~/.zshrc</a></li>
-<li><a href="https://raw.githubusercontent.com/zimfw/install/master/src/templates/zimrc">~/.zimrc</a></li>
-</ul>
+<p><a href="#set-up-~%2F.zshrc">Set up your <code>~/.zshrc</code> file</a></p>
 </li>
 <li>
-<p>Restart your terminal to automatically install the <code>zimfw</code> command line utility,
-install the modules defined in <code>~/.zimrc</code>, and build the initialization scripts.</p>
+<p><a href="#create-~%2F.zimrc">Create your <code>~/.zimrc</code> file</a></p>
+</li>
+<li>
+<p>Restart your terminal and you're done. Enjoy your Zsh IMproved!</p>
 </li>
 </ol>
+<h4 id="set-up-~%2F.zshrc">Set up <code>~/.zshrc</code></h4>
+<p>Add the lines below to your <code>~/.zshrc</code> file, in the following order:</p>
+<ol>
+<li>
+<p>To use our <code>degit</code> tool by default to install modules:</p>
+<pre><code class="language-zsh">zstyle ':zim:zmodule' use 'degit'
+</code></pre>
+<p>This is optional, and only required if you don't have <code>git</code> installed (yes,
+Zim works even without <code>git</code>!)</p>
+</li>
+<li>
+<p>To set where the directory used by Zim will be located:</p>
+<pre><code class="language-zsh">ZIM_HOME=~/.zim
+</code></pre>
+<p>The value of <code>ZIM_HOME</code> can be any directory your user has write access to.
+You can even set it to a cache directory like <code>${XDG_CACHE_HOME}/zim</code> or
+<code>~/.cache/zim</code> if you also include the step below, that automatically
+downloads the <code>zimfw</code> plugin manager.</p>
+</li>
+<li>
+<p>To automatically download the <code>zimfw</code> plugin manager if missing:</p>
+<pre><code class="language-zsh"># Download zimfw plugin manager if missing.
+if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
+  curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
+      https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+fi
+</code></pre>
+<p>Or if you use <code>wget</code> instead of <code>curl</code>:</p>
+<pre><code class="language-zsh"># Download zimfw plugin manager if missing.
+if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
+  mkdir -p ${ZIM_HOME} &amp;&amp; wget -nv -O ${ZIM_HOME}/zimfw.zsh \
+      https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+fi
+</code></pre>
+<p>This is optional. If you choose to not include this step, you should manually
+download the <code>zimfw.zsh</code> script once and keep it at <code>${ZIM_HOME}</code>.</p>
+</li>
+<li>
+<p>To automatically install missing modules and update the initialization script
+if missing or outdated:</p>
+<pre><code class="language-zsh"># Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
+  source ${ZIM_HOME}/zimfw.zsh init -q
+fi
+</code></pre>
+<p>This step is optional, but highly recommended. If you choose to not include
+it, you must remember to manually run <code>zimfw install</code> every time after you
+update your <a href="#create-~%2F.zimrc"><code>~/.zimrc</code></a> file.</p>
+</li>
+<li>
+<p>To source the initialization script, that initializes your modules:</p>
+<pre><code class="language-zsh"># Initialize modules.
+source ${ZIM_HOME}/init.zsh
+</code></pre>
+</li>
+</ol>
+<h4 id="create-~%2F.zimrc">Create <code>~/.zimrc</code></h4>
+<p>You must create your <code>.zimrc</code> file at <code>~/.zimrc</code>, if the <code>ZDOTDIR</code> environment
+variable is not defined. Otherwise, it must be at <code>${ZDOTDIR}/.zimrc</code>. It's
+referred to as <code>~/.zimrc</code> in the documentation for the sake of simplicity.</p>
+<p>You can start with just:</p>
+<pre><code class="language-zsh">zmodule zsh-users/zsh-syntax-highlighting
+zmodule zsh-users/zsh-autosuggestions
+</code></pre>
+<p>If you also want one of our prompt <a href="../themes">themes</a>:</p>
+<pre><code>zmodule asciiship
+zmodule zsh-users/zsh-syntax-highlighting
+zmodule zsh-users/zsh-autosuggestions
+</code></pre>
+<p>If you want to use our <a href="https://github.com/zimfw/completion">completion</a> module too, instead of using <code>compinit</code> directly:</p>
+<pre><code class="language-zsh">zmodule asciiship
+zmodule zsh-users/zsh-completions --fpath src
+zmodule completion
+zmodule zsh-users/zsh-syntax-highlighting
+zmodule zsh-users/zsh-autosuggestions
+</code></pre>
+<p>The <a href="https://github.com/zimfw/completion">completion</a> module calls <code>compinit</code> for you. You should remove any
+<code>compinit</code> calls from your <code>~/.zshrc</code> when you use this module. The modules will
+be initialized in the order they are defined, and <a href="https://github.com/zimfw/completion">completion</a> must be
+initialized <em>after</em> all modules that add completion definitions, so it must come
+after <a href="https://github.com/zsh-users/zsh-completions">zsh-users/zsh-completions</a>.</p>
+<p>Check the <a href="../commands/#zmodule"><code>zmodule</code> usage</a> for more examples on how to use it to
+define the modules you want to use.</p>
 
           </div>
         </div>

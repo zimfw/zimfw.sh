@@ -248,7 +248,7 @@
           </a>
           <div class="content">
             <h1>Table of Contents</h1>
-<nav class="table-of-contents"><ol><li><a href="#expressions">Expressions</a></li><li><a href="#process-substitution">Process Substitution</a></li><li><a href="#tab-completion">Tab Completion</a></li><li><a href="#utilities">Utilities</a></li><li><a href="#ls">ls</a></li><li><a href="#archives-(requires-module)">Archives (requires module)</a></li><li><a href="#git">Git</a><ol><li><a href="#branch">Branch</a></li><li><a href="#commit">Commit</a></li><li><a href="#conflict">Conflict</a></li><li><a href="#data">Data</a></li><li><a href="#fetch">Fetch</a></li><li><a href="#grep">Grep</a></li><li><a href="#index">Index</a></li><li><a href="#log">Log</a></li><li><a href="#merge">Merge</a></li><li><a href="#push">Push</a></li><li><a href="#rebase">Rebase</a></li><li><a href="#remote">Remote</a></li><li><a href="#stash">Stash</a></li><li><a href="#submodule">Submodule</a></li><li><a href="#tag">Tag</a></li><li><a href="#main-working-tree">Main working tree</a></li><li><a href="#working-trees">Working trees</a></li><li><a href="#misc">Misc</a></li></ol></li><li><a href="#homebrew-(requires-module)">Homebrew (requires module)</a><ol><li><a href="#homebrew-cask">Homebrew Cask</a></li></ol></li><li><a href="#pacman-(requires-module)">Pacman (requires module)</a><ol><li><a href="#aur-helpers">aur helpers</a></li></ol></li></ol></nav><hr>
+<nav class="table-of-contents"><ol><li><a href="#expressions">Expressions</a></li><li><a href="#process-substitution">Process Substitution</a></li><li><a href="#tab-completion">Tab Completion</a></li><li><a href="#ls">ls</a></li><li><a href="#utilities">Utilities</a></li><li><a href="#archives-(requires-module)">Archives (requires module)</a></li><li><a href="#git">Git</a><ol><li><a href="#branch">Branch</a></li><li><a href="#commit">Commit</a></li><li><a href="#conflict">Conflict</a></li><li><a href="#data">Data</a></li><li><a href="#fetch">Fetch</a></li><li><a href="#grep">Grep</a></li><li><a href="#index">Index</a></li><li><a href="#log">Log</a></li><li><a href="#merge">Merge</a></li><li><a href="#push">Push</a></li><li><a href="#rebase">Rebase</a></li><li><a href="#remote">Remote</a></li><li><a href="#stash">Stash</a></li><li><a href="#submodule">Submodule</a></li><li><a href="#tag">Tag</a></li><li><a href="#main-working-tree">Main working tree</a></li><li><a href="#working-trees">Working trees</a></li><li><a href="#misc">Misc</a></li></ol></li><li><a href="#homebrew-(requires-module)">Homebrew (requires module)</a><ol><li><a href="#homebrew-cask">Homebrew Cask</a></li></ol></li><li><a href="#pacman-(requires-module)">Pacman (requires module)</a><ol><li><a href="#aur-helpers">aur helpers</a></li></ol></li></ol></nav><hr>
 <h1 id="expressions">Expressions</h1>
 <table>
 <thead>
@@ -354,12 +354,6 @@
 </tr>
 </tbody>
 </table>
-<h1 id="utilities"><a href="https://github.com/zimfw/utility">Utilities</a></h1>
-<ul>
-<li><code>get</code> downloads from the given URL using <code>aria2c</code>, <code>axel</code>, <code>wget</code> or <code>curl</code>.</li>
-<li><code>mkcd</code> creates and changes to the given directory.</li>
-<li><code>mkpw</code> generates a random password with the given length and set of characters.</li>
-</ul>
 <h1 id="ls"><a href="https://github.com/zimfw/utility#ls">ls</a></h1>
 <ul>
 <li><code>ls</code> lists directories first (GNU only) and with colour (applies to all aliases below).</li>
@@ -371,6 +365,12 @@
 <li><code>lk</code> lists sorted by largest file size last.</li>
 <li><code>lt</code> lists sorted by newest modification time last.</li>
 <li><code>lc</code> lists sorted by newest status change (ctime) last.</li>
+</ul>
+<h1 id="utilities"><a href="https://github.com/zimfw/utility">Utilities</a></h1>
+<ul>
+<li><code>get</code> downloads from the given URL using <code>aria2c</code>, <code>axel</code>, <code>wget</code> or <code>curl</code>.</li>
+<li><code>mkcd</code> creates and changes to the given directory.</li>
+<li><code>mkpw</code> generates a random password with the given length and set of characters.</li>
 </ul>
 <h1 id="archives-(requires-module)"><a href="https://github.com/zimfw/archive">Archives</a> (requires module)</h1>
 <ul>
@@ -391,6 +391,7 @@
 <li><code>GbL</code> lists local and remote branches and their commits.</li>
 <li><code>Gbm</code> renames a branch.</li>
 <li><code>GbM</code> renames a branch even if the new branch name already exists.</li>
+<li><code>GbR</code> resets a branch even if the branch name already exists.</li>
 <li><code>Gbs</code> lists branches and their commits with ancestry graphs.</li>
 <li><code>GbS</code> lists local and remote branches and their commits with ancestry graphs.</li>
 <li><code>Gbu</code> unsets the remote-tracking information for the current or given branch.</li>

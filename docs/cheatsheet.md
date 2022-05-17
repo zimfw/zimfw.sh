@@ -40,12 +40,6 @@ title: Cheatsheet
 | *kill (tab)*                                                |
 | *unrar (tab)*                                               |
 
-# [Utilities](https://github.com/zimfw/utility)
-
-  * `get` downloads from the given URL using `aria2c`, `axel`, `wget` or `curl`.
-  * `mkcd` creates and changes to the given directory.
-  * `mkpw` generates a random password with the given length and set of characters.
-
 # [ls](https://github.com/zimfw/utility#ls)
 
   * `ls` lists directories first (GNU only) and with colour (applies to all aliases below).
@@ -57,6 +51,13 @@ title: Cheatsheet
   * `lk` lists sorted by largest file size last.
   * `lt` lists sorted by newest modification time last.
   * `lc` lists sorted by newest status change (ctime) last.
+
+# [Utilities](https://github.com/zimfw/utility)
+
+  * `get` downloads from the given URL using `aria2c`, `axel`, `wget` or `curl`.
+  * `mkcd` creates and changes to the given directory.
+  * `mkpw` generates a random password with the given length and set of characters.
+
 
 # [Archives](https://github.com/zimfw/archive) (requires module)
 
@@ -77,6 +78,7 @@ title: Cheatsheet
   * `GbL` lists local and remote branches and their commits.
   * `Gbm` renames a branch.
   * `GbM` renames a branch even if the new branch name already exists.
+  * `GbR` resets a branch even if the branch name already exists.
   * `Gbs` lists branches and their commits with ancestry graphs.
   * `GbS` lists local and remote branches and their commits with ancestry graphs.
   * `Gbu` unsets the remote-tracking information for the current or given branch.

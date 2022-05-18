@@ -8,27 +8,36 @@ title: Cheatsheet
 
 ---
 
-# Expressions
+## Expressions
 
-| Expression        | Example             | Description                             |
-| ----------------- | ------------------- | --------------------------------------- |
-| `!!`              | `sudo !!`           | Last command                            |
-| `!*`              | `vim !*`            | Last command’s parameters               |
-| `!^`              |                     | Last command’s first parameter          |
-| `!$`              |                     | Last command’s last parameter           |
-| `!?ls`            | `sudo !?ls`         | Command and params of last `ls` command |
-| `!?ls?:*`         |                     | Params of last `ls` command             |
-| `*(m0)`           | `rm *(m0)`          | Last modified today                     |
-| `*(m-4)`          |                     | Last modified <4 days ago               |
+### History expansion
 
-# Process Substitution
+| Expression | Example           | Description                                      |
+| ---------- | ----------------- | ------------------------------------------------ |
+| `!!`       | `sudo !!`         | Last command-line                                |
+| `!*`       | `vim !*`          | Arguments of last command                        |
+| `!^`       | `vim !^`          | First argument of last command                   |
+| `!$`       | `vim !$`          | Last argument of last command                    |
+| `!ls`      | `sudo !ls`        | Command-line of last command starting with `ls`  |
+| `!ls:*`    | `rm !ls:*`        | Arguments of last command starting with `ls`     |
+
+### Glob qualifiers
+
+| Expression | Example           | Description                                      |
+| ---------- | ----------------- | ------------------------------------------------ |
+| `*(.)`     | `ls *(.)`         | Plain files                                      |
+| `*(/)`     | `ls *(/)`         | Directories                                      |
+| `*(m0)`    | `ls *(m0)`        | Last modified today                              |
+| `*(m-4)`   | `ls *(m-4)`       | Last modified <4 days ago                        |
+
+## Process Substitution
 
 | Expression   | Example                                       | Description                                                             |
 | ------------ | --------------------------------------------- | ----------------------------------------------------------------------- |
 | `<(COMMAND)` | `grep "needle" <(curl "https://haystack.io")` | Replace argument with *named pipe/FIFO* (read-only) with command output |
 | `=(COMMAND)` | `vim =(curl "https://haystack.io")`           | Replace argument with *file* (writable) containing command output       |
 
-# [Tab Completion](https://github.com/zimfw/completion)
+## [Tab Completion](https://github.com/zimfw/completion)
 
 | Provides helpful explanations for options and what they do. |
 | ----------------------------------------------------------- |
@@ -40,7 +49,7 @@ title: Cheatsheet
 | *kill (tab)*                                                |
 | *unrar (tab)*                                               |
 
-# [ls](https://github.com/zimfw/utility#ls)
+## [ls](https://github.com/zimfw/utility#ls)
 
   * `ls` lists directories first (GNU only) and with colour (applies to all aliases below).
   * `ll` lists with long format and human-readable sizes (applies to all aliases below).
@@ -52,20 +61,20 @@ title: Cheatsheet
   * `lt` lists sorted by newest modification time last.
   * `lc` lists sorted by newest status change (ctime) last.
 
-# [Utilities](https://github.com/zimfw/utility)
+## [Utilities](https://github.com/zimfw/utility)
 
   * `get` downloads from the given URL using `aria2c`, `axel`, `wget` or `curl`.
   * `mkcd` creates and changes to the given directory.
   * `mkpw` generates a random password with the given length and set of characters.
 
 
-# [Archives](https://github.com/zimfw/archive) (requires module)
+## [Archives](https://github.com/zimfw/archive) (requires module)
 
   * `archive` generates an archive based on file extension.
   * `unarchive` unarchives files based on the extensions.
   * `lsarchive` lists archives contents based on the extensions.
 
-# [Git](https://github.com/zimfw/git)
+## [Git](https://github.com/zimfw/git)
 
   * `G` is short for `git`.
 
@@ -277,7 +286,7 @@ title: Cheatsheet
   * `G..` changes the current directory to the top level of the working tree.
   * `G?` looks up the aliases defined here with the given regular expressions.
 
-# [Homebrew](https://github.com/zimfw/homebrew) (requires module)
+## [Homebrew](https://github.com/zimfw/homebrew) (requires module)
 
   * `brewc` cleans the cache.
   * `brewC` scrubs the cache, including downloads for the latest versions.
@@ -311,7 +320,7 @@ title: Cheatsheet
   * `caskX` uninstalls even if given cask does not appear to be present.
   * `caskz` zaps all files associated with given cask.
 
-# [Pacman](https://github.com/zimfw/pacman) (requires module)
+## [Pacman](https://github.com/zimfw/pacman) (requires module)
 
   * `pacb` builds package in the current directory, cleanups, and installs.
   * `paci` installs, syncs, and upgrades packages.
@@ -329,7 +338,7 @@ title: Cheatsheet
   * `pacown` lists all files provided by a given package.
   * `pacblame` shows packages that own a specified file.
 
-#### aur helpers
+### aur helpers
 
   * `aurb` clones the given package name from the AUR, builds, and installs.
   * `aurd` clones the given package name from the AUR, but does not build.

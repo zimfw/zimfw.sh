@@ -248,8 +248,9 @@
           </a>
           <div class="content">
             <h1>Table of Contents</h1>
-<nav class="table-of-contents"><ol><li><a href="#expressions">Expressions</a></li><li><a href="#process-substitution">Process Substitution</a></li><li><a href="#tab-completion">Tab Completion</a></li><li><a href="#ls">ls</a></li><li><a href="#utilities">Utilities</a></li><li><a href="#archives-(requires-module)">Archives (requires module)</a></li><li><a href="#git">Git</a><ol><li><a href="#branch">Branch</a></li><li><a href="#commit">Commit</a></li><li><a href="#conflict">Conflict</a></li><li><a href="#data">Data</a></li><li><a href="#fetch">Fetch</a></li><li><a href="#grep">Grep</a></li><li><a href="#index">Index</a></li><li><a href="#log">Log</a></li><li><a href="#merge">Merge</a></li><li><a href="#push">Push</a></li><li><a href="#rebase">Rebase</a></li><li><a href="#remote">Remote</a></li><li><a href="#stash">Stash</a></li><li><a href="#submodule">Submodule</a></li><li><a href="#tag">Tag</a></li><li><a href="#main-working-tree">Main working tree</a></li><li><a href="#working-trees">Working trees</a></li><li><a href="#misc">Misc</a></li></ol></li><li><a href="#homebrew-(requires-module)">Homebrew (requires module)</a><ol><li><a href="#homebrew-cask">Homebrew Cask</a></li></ol></li><li><a href="#pacman-(requires-module)">Pacman (requires module)</a><ol><li><a href="#aur-helpers">aur helpers</a></li></ol></li></ol></nav><hr>
-<h1 id="expressions">Expressions</h1>
+<nav class="table-of-contents"><ol><li><a href="#expressions">Expressions</a><ol><li><a href="#history-expansion">History expansion</a></li><li><a href="#glob-qualifiers">Glob qualifiers</a></li></ol></li><li><a href="#process-substitution">Process Substitution</a></li><li><a href="#tab-completion">Tab Completion</a></li><li><a href="#ls">ls</a></li><li><a href="#utilities">Utilities</a></li><li><a href="#archives-(requires-module)">Archives (requires module)</a></li><li><a href="#git">Git</a><ol><li><a href="#branch">Branch</a></li><li><a href="#commit">Commit</a></li><li><a href="#conflict">Conflict</a></li><li><a href="#data">Data</a></li><li><a href="#fetch">Fetch</a></li><li><a href="#grep">Grep</a></li><li><a href="#index">Index</a></li><li><a href="#log">Log</a></li><li><a href="#merge">Merge</a></li><li><a href="#push">Push</a></li><li><a href="#rebase">Rebase</a></li><li><a href="#remote">Remote</a></li><li><a href="#stash">Stash</a></li><li><a href="#submodule">Submodule</a></li><li><a href="#tag">Tag</a></li><li><a href="#main-working-tree">Main working tree</a></li><li><a href="#working-trees">Working trees</a></li><li><a href="#misc">Misc</a></li></ol></li><li><a href="#homebrew-(requires-module)">Homebrew (requires module)</a><ol><li><a href="#homebrew-cask">Homebrew Cask</a></li></ol></li><li><a href="#pacman-(requires-module)">Pacman (requires module)</a><ol><li><a href="#aur-helpers">aur helpers</a></li></ol></li></ol></nav><hr>
+<h2 id="expressions">Expressions</h2>
+<h3 id="history-expansion">History expansion</h3>
 <table>
 <thead>
 <tr>
@@ -262,46 +263,68 @@
 <tr>
 <td><code>!!</code></td>
 <td><code>sudo !!</code></td>
-<td>Last command</td>
+<td>Last command-line</td>
 </tr>
 <tr>
 <td><code>!*</code></td>
 <td><code>vim !*</code></td>
-<td>Last command’s parameters</td>
+<td>Arguments of last command</td>
 </tr>
 <tr>
 <td><code>!^</code></td>
-<td></td>
-<td>Last command’s first parameter</td>
+<td><code>vim !^</code></td>
+<td>First argument of last command</td>
 </tr>
 <tr>
 <td><code>!$</code></td>
-<td></td>
-<td>Last command’s last parameter</td>
+<td><code>vim !$</code></td>
+<td>Last argument of last command</td>
 </tr>
 <tr>
-<td><code>!?ls</code></td>
-<td><code>sudo !?ls</code></td>
-<td>Command and params of last <code>ls</code> command</td>
+<td><code>!ls</code></td>
+<td><code>sudo !ls</code></td>
+<td>Command-line of last command starting with <code>ls</code></td>
 </tr>
 <tr>
-<td><code>!?ls?:*</code></td>
-<td></td>
-<td>Params of last <code>ls</code> command</td>
+<td><code>!ls:*</code></td>
+<td><code>rm !ls:*</code></td>
+<td>Arguments of last command starting with <code>ls</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="glob-qualifiers">Glob qualifiers</h3>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>*(.)</code></td>
+<td><code>ls *(.)</code></td>
+<td>Plain files</td>
+</tr>
+<tr>
+<td><code>*(/)</code></td>
+<td><code>ls *(/)</code></td>
+<td>Directories</td>
 </tr>
 <tr>
 <td><code>*(m0)</code></td>
-<td><code>rm *(m0)</code></td>
+<td><code>ls *(m0)</code></td>
 <td>Last modified today</td>
 </tr>
 <tr>
 <td><code>*(m-4)</code></td>
-<td></td>
+<td><code>ls *(m-4)</code></td>
 <td>Last modified &lt;4 days ago</td>
 </tr>
 </tbody>
 </table>
-<h1 id="process-substitution">Process Substitution</h1>
+<h2 id="process-substitution">Process Substitution</h2>
 <table>
 <thead>
 <tr>
@@ -323,7 +346,7 @@
 </tr>
 </tbody>
 </table>
-<h1 id="tab-completion"><a href="https://github.com/zimfw/completion">Tab Completion</a></h1>
+<h2 id="tab-completion"><a href="https://github.com/zimfw/completion">Tab Completion</a></h2>
 <table>
 <thead>
 <tr>
@@ -354,7 +377,7 @@
 </tr>
 </tbody>
 </table>
-<h1 id="ls"><a href="https://github.com/zimfw/utility#ls">ls</a></h1>
+<h2 id="ls"><a href="https://github.com/zimfw/utility#ls">ls</a></h2>
 <ul>
 <li><code>ls</code> lists directories first (GNU only) and with colour (applies to all aliases below).</li>
 <li><code>ll</code> lists with long format and human-readable sizes (applies to all aliases below).</li>
@@ -366,19 +389,19 @@
 <li><code>lt</code> lists sorted by newest modification time last.</li>
 <li><code>lc</code> lists sorted by newest status change (ctime) last.</li>
 </ul>
-<h1 id="utilities"><a href="https://github.com/zimfw/utility">Utilities</a></h1>
+<h2 id="utilities"><a href="https://github.com/zimfw/utility">Utilities</a></h2>
 <ul>
 <li><code>get</code> downloads from the given URL using <code>aria2c</code>, <code>axel</code>, <code>wget</code> or <code>curl</code>.</li>
 <li><code>mkcd</code> creates and changes to the given directory.</li>
 <li><code>mkpw</code> generates a random password with the given length and set of characters.</li>
 </ul>
-<h1 id="archives-(requires-module)"><a href="https://github.com/zimfw/archive">Archives</a> (requires module)</h1>
+<h2 id="archives-(requires-module)"><a href="https://github.com/zimfw/archive">Archives</a> (requires module)</h2>
 <ul>
 <li><code>archive</code> generates an archive based on file extension.</li>
 <li><code>unarchive</code> unarchives files based on the extensions.</li>
 <li><code>lsarchive</code> lists archives contents based on the extensions.</li>
 </ul>
-<h1 id="git"><a href="https://github.com/zimfw/git">Git</a></h1>
+<h2 id="git"><a href="https://github.com/zimfw/git">Git</a></h2>
 <ul>
 <li><code>G</code> is short for <code>git</code>.</li>
 </ul>
@@ -590,7 +613,7 @@
 <li><code>G..</code> changes the current directory to the top level of the working tree.</li>
 <li><code>G?</code> looks up the aliases defined here with the given regular expressions.</li>
 </ul>
-<h1 id="homebrew-(requires-module)"><a href="https://github.com/zimfw/homebrew">Homebrew</a> (requires module)</h1>
+<h2 id="homebrew-(requires-module)"><a href="https://github.com/zimfw/homebrew">Homebrew</a> (requires module)</h2>
 <ul>
 <li><code>brewc</code> cleans the cache.</li>
 <li><code>brewC</code> scrubs the cache, including downloads for the latest versions.</li>
@@ -624,7 +647,7 @@
 <li><code>caskX</code> uninstalls even if given cask does not appear to be present.</li>
 <li><code>caskz</code> zaps all files associated with given cask.</li>
 </ul>
-<h1 id="pacman-(requires-module)"><a href="https://github.com/zimfw/pacman">Pacman</a> (requires module)</h1>
+<h2 id="pacman-(requires-module)"><a href="https://github.com/zimfw/pacman">Pacman</a> (requires module)</h2>
 <ul>
 <li><code>pacb</code> builds package in the current directory, cleanups, and installs.</li>
 <li><code>paci</code> installs, syncs, and upgrades packages.</li>
@@ -642,7 +665,7 @@
 <li><code>pacown</code> lists all files provided by a given package.</li>
 <li><code>pacblame</code> shows packages that own a specified file.</li>
 </ul>
-<h4 id="aur-helpers">aur helpers</h4>
+<h3 id="aur-helpers">aur helpers</h3>
 <ul>
 <li><code>aurb</code> clones the given package name from the AUR, builds, and installs.</li>
 <li><code>aurd</code> clones the given package name from the AUR, but does not build.</li>

@@ -56,6 +56,6 @@ Community Modules
 
 These are modules provided by users of the community
 
-| Name                                                  | Description                                                             |
-| ----------------------------------------------------- | ----------------------------------------------------------------------- |
-| [zim-zoxide](https://github.com/kiesman99/zim-zoxide) | Sets up [zoxide](https://github.com/ajeetdsouza/zoxide) in zsh.         | 
+| Name                                                            | Description                                                             |
+| --------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| [kiesman99/zim-zoxide](https://github.com/kiesman99/zim-zoxide) | Sets up [zoxide](https://github.com/ajeetdsouza/zoxide) in zsh.         |

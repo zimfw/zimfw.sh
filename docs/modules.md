@@ -56,6 +56,7 @@ Community Modules
 
 These are modules provided by users of the community
 
-| Name                                                            | Description                                                             |
-| --------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| [kiesman99/zim-zoxide](https://github.com/kiesman99/zim-zoxide) | Sets up [zoxide](https://github.com/ajeetdsouza/zoxide) in zsh.         |
+| Name                                                            | Description                                                                              |
+| --------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| [joke/zim-kubectl](https://github.com/joke/zim-kubectl)         | Sets up [kubectl](https://kubernetes.io/docs/reference/kubectl/kubectl/) in zsh.         |
+| [kiesman99/zim-zoxide](https://github.com/kiesman99/zim-zoxide) | Sets up [zoxide](https://github.com/ajeetdsouza/zoxide) in zsh.                          |

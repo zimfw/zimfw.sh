@@ -65,4 +65,5 @@ These are modules provided by users of the community
 | [joke/zim-istioctl](https://github.com/joke/zim-istioctl)       | Sets up [istioctl](https://github.com/istio/istio) in zsh.                               |
 | [joke/zim-kubectl](https://github.com/joke/zim-kubectl)         | Sets up [kubectl](https://kubernetes.io/docs/reference/kubectl/kubectl/) in zsh.         |
 | [joke/zim-starship](https://github.com/joke/zim-starship)       | Sets up [starship](https://github.com/starship/starship) prompt in zsh.                  |
+| [joke/zim-yq](https://github.com/joke/zim-yq)                   | Sets up [yq](https://github.com/mikefarah/yq) in zsh.                                    |
 | [kiesman99/zim-zoxide](https://github.com/kiesman99/zim-zoxide) | Sets up [zoxide](https://github.com/ajeetdsouza/zoxide) in zsh.                          |

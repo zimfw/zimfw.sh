@@ -60,5 +60,6 @@ These are modules provided by users of the community
 | --------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | [joke/zim-chezmoi](https://github.com/joke/zim-chezmoi)         | Sets up [chezmoi](https://github.com/twpayne/chezmoi) in zsh.                            |
 | [joke/zim-github-cli](https://github.com/joke/zim-github-cli)   | Sets up [github-cli](https://github.com/cli/cli) in zsh.                                 |
+| [joke/zim-gopass](https://github.com/joke/zim-gopass)           | Sets up [gopass](https://github.com/gopasspw/gopass) in zsh.                             |
 | [joke/zim-kubectl](https://github.com/joke/zim-kubectl)         | Sets up [kubectl](https://kubernetes.io/docs/reference/kubectl/kubectl/) in zsh.         |
 | [kiesman99/zim-zoxide](https://github.com/kiesman99/zim-zoxide) | Sets up [zoxide](https://github.com/ajeetdsouza/zoxide) in zsh.                          |

@@ -64,6 +64,7 @@ These are modules provided by users of the community
 | [joke/zim-helm](https://github.com/joke/zim-helm)               | Sets up [helm](https://github.com/helm/helm) in zsh.                                     |
 | [joke/zim-istioctl](https://github.com/joke/zim-istioctl)       | Sets up [istioctl](https://github.com/istio/istio) in zsh.                               |
 | [joke/zim-k9s](https://github.com/joke/zim-k9s)                 | Sets up [k9s](https://github.com/derailed/k9s) in zsh.                                   |
+| [joke/zim-kn](https://github.com/joke/zim-kn)                   | Sets up [kn](https://github.com/knative/client) in zsh.                                  |
 | [joke/zim-kubectl](https://github.com/joke/zim-kubectl)         | Sets up [kubectl](https://kubernetes.io/docs/reference/kubectl/kubectl/) in zsh.         |
 | [joke/zim-starship](https://github.com/joke/zim-starship)       | Sets up [starship](https://github.com/starship/starship) prompt in zsh.                  |
 | [joke/zim-yq](https://github.com/joke/zim-yq)                   | Sets up [yq](https://github.com/mikefarah/yq) in zsh.                                    |

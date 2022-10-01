@@ -27,6 +27,7 @@ Productivity
 | [exa](https://github.com/zimfw/exa)                 | Adds aliases and better defaults for exa.                                   |
 | [fzf](https://github.com/zimfw/fzf)                 | Configures fzf for faster fetching of files and directories names.          |
 | [git](https://github.com/zimfw/git)                 | Provides nice git aliases and functions.                                    |
+| [magic-enter](https://github.com/zimfw/magic-enter) | Shown when there is no command and user presses ENTER.                      |
 | [pvenv](https://github.com/zimfw/pvenv)             | Manages all python venvs in one place.                                      |
 | [ruby](https://github.com/zimfw/ruby)               | Provides ruby, bundler, rbenv and rvm aliases and initialization.           |
 | [ssh](https://github.com/zimfw/ssh)                 | Provides a convenient way to load ssh-agent.                                |
@@ -50,11 +51,10 @@ Distro-specific
 | [homebrew](https://github.com/zimfw/homebrew) | Adds aliases for Homebrew.                   |
 | [pacman](https://github.com/zimfw/pacman)     | Adds aliases for the pacman package manager. |
 
-
-Community Modules
+Community modules
 -----------------
 
-These are modules provided by users of the community
+These are modules provided by users of the community.
 
 | Name                                                            | Description                                                                              |
 | --------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |

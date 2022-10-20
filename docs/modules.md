@@ -16,6 +16,7 @@ Behaviour
 | [completion](https://github.com/zimfw/completion)       | Enables and configures smart and extensive tab completion. |
 | [environment](https://github.com/zimfw/environment)     | Sets generic Zsh built-in environment options.             |
 | [input](https://github.com/zimfw/input)                 | Applies correct bindkeys for input events.                 |
+| [run-help](https://github.com/zimfw/run-help)           | Figures out where to get the best help, and gets it.       |
 
 Productivity
 ------------
@@ -27,6 +28,7 @@ Productivity
 | [exa](https://github.com/zimfw/exa)                 | Adds aliases and better defaults for exa.                                   |
 | [fzf](https://github.com/zimfw/fzf)                 | Configures fzf for faster fetching of files and directories names.          |
 | [git](https://github.com/zimfw/git)                 | Provides nice git aliases and functions.                                    |
+| [k](https://github.com/zimfw/k)                     | All kubectl aliases in one function.                                        |
 | [magic-enter](https://github.com/zimfw/magic-enter) | Shown when there is no command and user presses ENTER.                      |
 | [pvenv](https://github.com/zimfw/pvenv)             | Manages all python venvs in one place.                                      |
 | [ruby](https://github.com/zimfw/ruby)               | Provides ruby, bundler, rbenv and rvm aliases and initialization.           |

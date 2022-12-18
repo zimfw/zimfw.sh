@@ -247,7 +247,17 @@
             <i class="fa fa-edit" aria-hidden="true"></i>
           </a>
           <div class="content">
-            <p>Modules are installed using <code>git</code> by default. If you don't have <code>git</code>
+            <p>Customize path of the directory used by Zim with the <code>ZIM_HOME</code> environment
+variable:</p>
+<pre><code>ZIM_HOME=~/.zim
+</code></pre>
+<p>By default, the <code>zimfw</code> plugin manager configuration file must be at <code>~/.zimrc</code>,
+if the <code>ZDOTDIR</code> environment variable is not defined. Otherwise, it must be at
+<code>${ZDOTDIR}/.zimrc</code>. You can customize its full path and name with the
+<code>ZIM_CONFIG_FILE</code> environment variable:</p>
+<pre><code>ZIM_CONFIG_FILE=~/.config/zsh/zimrc
+</code></pre>
+<p>Modules are installed using <code>git</code> by default. If you don't have <code>git</code>
 installed, or if you want to take advantage of our degit tool for faster and
 lighter module installations, you can set degit as the default tool with:</p>
 <pre><code>zstyle ':zim:zmodule' use 'degit'

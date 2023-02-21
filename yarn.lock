@@ -633,10 +633,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bulma@npm:^0.9.1":
-  version: 0.9.1
-  resolution: "bulma@npm:0.9.1"
-  checksum: 4bdfe54953efefff359b61c15825f58810bd0bb3bfcc5091d17548758ad926a0c1b587280e93b19dc37c382a93ab1d18d958f931727a1528feba67a0e5c196d9
+"bulma@npm:^0.9.4":
+  version: 0.9.4
+  resolution: "bulma@npm:0.9.4"
+  checksum: bc0ab8c203deb0ae200fab5b38547ad4bc8ed1e3abcf6f4ac8a2229af46540419bbcb78c9d2e80f3ddda8825d64fa186ed8775674656cdcabe5544be4d0f3d85
   languageName: node
   linkType: hard
 
@@ -4661,7 +4661,7 @@ __metadata:
   resolution: "zimfw.sh@workspace:."
   dependencies:
     "@11ty/eleventy": ^0.11.1
-    bulma: ^0.9.1
+    bulma: ^0.9.4
     js-yaml: ^3.14.0
     markdown-it-anchor: ^6.0.1
     markdown-it-toc-done-right: ^4.2.0

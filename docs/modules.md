@@ -69,6 +69,7 @@ These are modules provided by users of the community.
 | [joke/zim-kn](https://github.com/joke/zim-kn)                   | Sets up [kn](https://github.com/knative/client) in zsh.                                  |
 | [joke/zim-kubectl](https://github.com/joke/zim-kubectl)         | Sets up [kubectl](https://kubernetes.io/docs/reference/kubectl/kubectl/) in zsh.         |
 | [joke/zim-minikube](https://github.com/joke/zim-minikube)       | Sets up [minikube](https://github.com/kubernetes/minikube) in zsh.                       |
+| [joke/zim-rtx](https://github.com/joke/zim-rtx)                 | Sets up [rtx](https://github.com/jdxcode/rtx) in zsh.                                    |
 | [joke/zim-skaffold](https://github.com/joke/zim-skaffold)       | Sets up [skaffold](https://github.com/GoogleContainerTools/skaffold) in zsh.             |
 | [joke/zim-starship](https://github.com/joke/zim-starship)       | Sets up [starship](https://github.com/starship/starship) prompt in zsh.                  |
 | [joke/zim-steampipe](https://github.com/joke/zim-steampipe)     | Sets up [steampipe](https://github.com/turbot/steampipe) in zsh.                         |

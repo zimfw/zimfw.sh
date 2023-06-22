@@ -12,6 +12,10 @@ theme, available when clicking on the name of the theme below.
 
 <img width="706" src="https://zimfw.github.io/images/prompts/asciiship@2.png">
 
+### [bira](https://github.com/zimfw/bira)
+
+<img width="706" src="https://zimfw.github.io/images/prompts/bira@2.png">
+
 ### [eriner](https://github.com/zimfw/eriner)
 
 <img width="706" src="https://zimfw.github.io/images/prompts/eriner@2.png">

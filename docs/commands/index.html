@@ -365,8 +365,7 @@ Per-call initialization options:
 
 Actions:
   <b>build</b>           Build <b>${ZIM_HOME}/init.zsh</b> and <b>${ZIM_HOME}/login_init.zsh</b>.
-                  Also does <b>check-dumpfile</b> and <b>compile</b>. Use <b>-v</b> to also see their output.
-  <b>check-dumpfile</b>  Does <b>clean-dumpfile</b> if new completion configuration needs to be dumped.
+                  Also does <b>compile</b>. Use <b>-v</b> to also see its output.
   <b>clean</b>           Clean all. Does both <b>clean-compiled</b> and <b>clean-dumpfile</b>.
   <b>clean-compiled</b>  Clean Zsh compiled files.
   <b>clean-dumpfile</b>  Clean completion dumpfile.
@@ -376,16 +375,19 @@ Actions:
   <b>list</b>            List all modules currently defined in <b>~/.zimrc</b>. Use <b>-v</b> to also see the mod-
                   ules details.
   <b>init</b>            Same as <b>install</b>, but with output tailored to be used at terminal startup.
-  <b>install</b>         Install new modules. Also does <b>build</b>, <b>check-dumpfile</b> and <b>compile</b>. Use <b>-v</b> to
-                  also see their output, any on-pull output, and see skipped modules.
+  <b>install</b>         Install new modules. Also does <b>build</b>, <b>compile</b>. Use <b>-v</b> to also see their
+                  output, any on-pull output and skipped modules.
   <b>uninstall</b>       Delete unused modules. Prompts for confirmation. Use <b>-q</b> for quiet uninstall.
-  <b>update</b>          Update current modules. Also does <b>build</b>, <b>check-dumpfile</b> and <b>compile</b>. Use <b>-v</b>
-                  to also see their output, any on-pull output, and see skipped modules.
+  <b>check</b>           Check if updates for current modules are available. Use <b>-v</b> to also see
+                  skipped and up to date modules.
+  <b>update</b>          Update current modules. Also does <b>build</b>, <b>compile</b>. Use <b>-v</b> to also see their
+                  output, any on-pull output and skipped modules.
+  <b>check-version</b>   Check if a new version of zimfw is available.
   <b>upgrade</b>         Upgrade zimfw. Also does <b>compile</b>. Use <b>-v</b> to also see its output.
   <b>version</b>         Print zimfw version.
 
 Options:
-  <b>-q</b>              Quiet (yes to prompts, and only outputs errors)
+  <b>-q</b>              Quiet (yes to prompts and only outputs errors)
   <b>-v</b>              Verbose (outputs more details)
 </pre>
 

@@ -25,6 +25,7 @@ Productivity
 | --------------------------------------------------- | --------------------------------------------------------------------------- |
 | [archive](https://github.com/zimfw/archive)         | Provides archive and unarchive functions for easy archive manipulation.     |
 | [asdf](https://github.com/zimfw/asdf)               | Sets up asdf, with auto install and optimized usage of the direnv plugin.   |
+| [direnv](https://github.com/zimfw/direnv)           | Sets up the direnv Zsh shell integration                                    |
 | [exa](https://github.com/zimfw/exa)                 | Adds aliases and better defaults for exa.                                   |
 | [fzf](https://github.com/zimfw/fzf)                 | Configures fzf for faster fetching of files and directories names.          |
 | [git](https://github.com/zimfw/git)                 | Provides nice git aliases and functions.                                    |

@@ -57,11 +57,10 @@ Below are some usage examples:
 Add <b>zmodule</b> calls to your <b>~/.zimrc</b> file to define the modules to be initialized. The initiali-
 zation will be done in the same order it&apos;s defined.
 
-
   &lt;url&gt;                      Module absolute path or repository URL. The following URL formats
                              are equivalent: <b>foo</b>, <b>zimfw/foo</b>, <b>https://github.com/zimfw/foo.git</b>.
                              If an absolute path is given, the module is considered externally
-                             installed, and won&apos;t be installed or updated by zimfw.
+                             installed and won&apos;t be installed or updated by zimfw.
   <b>-n</b>|<b>--name</b> &lt;module_name&gt;    Set a custom module name. Default: the last component in &lt;url&gt;.
                              Slashes can be used inside the name to organize the module into
                              subdirectories. The module will be installed at
@@ -73,13 +72,16 @@ Per-module options:
                              Overrides the tag option. Default: the repository default branch.
   <b>-t</b>|<b>--tag</b> &lt;tag_name&gt;        Use specified tag when installing and updating the module. Over-
                              rides the branch option.
-  <b>-u</b>|<b>--use</b> &lt;<b>git</b>|<b>degit</b>&gt;       Install and update the module using the defined tool. Default is
-                             either defined by <b>zstyle &apos;:zim:zmodule&apos; use &apos;</b>&lt;<b>git</b>|<b>degit</b>&gt;<b>&apos;</b>, or <b>git</b>
-                             if none is provided.
-                             <b>git</b> requires git itself. Local changes are preserved on updates.
-                             <b>degit</b> requires curl or wget, and currently only works with GitHub
+  <b>-u</b>|<b>--use</b> &lt;tool_name&gt;       Install and update the module using the defined tool. Default is
+                             either defined by <b>zstyle &apos;:zim:zmodule&apos; use &apos;</b>&lt;tool_name&gt;<b>&apos;</b>, or <b>git</b>
+                             if none is provided. The tools available are:
+                             <b>git</b> uses the git command. Local changes are preserved on updates.
+                             <b>degit</b> uses curl or wget, and currently only works with GitHub
                              URLs. Modules install faster and take less disk space. Local
                              changes are lost on updates. Git submodules are not supported.
+                             <b>mkdir</b> creates an empty directory. The &lt;url&gt; is only used to set
+                             the module name. Use the <b>-c</b>|<b>--cmd</b> or <b>--on-pull</b> options to execute
+                             the desired command to generate the module files.
   <b>--no-submodules</b>            Don&apos;t install or update git submodules.
   <b>-z</b>|<b>--frozen</b>                Don&apos;t install or update the module.
 
@@ -89,6 +91,12 @@ Per-module options:
 Per-module-root options:
   <b>--if</b> &lt;test&gt;                Will only initialize module root if specified test returns a zero
                              exit status. The test is evaluated at every new terminal startup.
+  <b>--if-command</b> &lt;cmd_name&gt;    Will only initialize module root if specified external command is
+                             available. This is evaluated at every new terminal startup.
+                             Equivalent to <b>--if &apos;(( ${+commands[</b>&lt;cmd_name&gt;<b>]} ))&apos;</b>.
+  <b>--if-ostype</b> &lt;ostype&gt;       Will only initialize module root if <b>OSTYPE</b> is equal to the given
+                             expression. This is evaluated at every new terminal startup.
+                             Equivalent to <b>--if &apos;[[ ${OSTYPE} == </b>&lt;ostype&gt;<b> ]]&apos;</b>.
   <b>--on-pull</b> &lt;command&gt;        Execute command after installing or updating the module. The com-
                              mand is executed in the module root directory.
   <b>-d</b>|<b>--disabled</b>              Don&apos;t initialize the module root or uninstall the module.
@@ -137,12 +145,15 @@ Actions:
   <b>clean-dumpfile</b>  Clean completion dumpfile.
   <b>compile</b>         Compile Zsh files.
   <b>help</b>            Print this help.
-  <b>info</b>            Print Zim and system info.
+  <b>info</b>            Print zimfw and system info.
   <b>list</b>            List all modules currently defined in <b>~/.zimrc</b>. Use <b>-v</b> to also see the mod-
                   ules details.
   <b>init</b>            Same as <b>install</b>, but with output tailored to be used at terminal startup.
   <b>install</b>         Install new modules. Also does <b>build</b>, <b>compile</b>. Use <b>-v</b> to also see their
                   output, any on-pull output and skipped modules.
+  <b>reinstall</b>       Reinstall modules that failed check. Prompts for confirmation. Use <b>-q</b> for
+                  quiet reinstall. Also does <b>build</b>, <b>compile</b>. Use <b>-v</b> to also see their output,
+                  any on-pull output and skipped modules.
   <b>uninstall</b>       Delete unused modules. Prompts for confirmation. Use <b>-q</b> for quiet uninstall.
   <b>check</b>           Check if updates for current modules are available. Use <b>-v</b> to also see
                   skipped and up to date modules.

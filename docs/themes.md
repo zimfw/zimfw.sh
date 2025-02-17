@@ -8,6 +8,10 @@ Some themes require also installing [prompt enhancement modules](../modules/#pro
 So make sure to check the requirements of the theme you've chosen. They can be found in the full documentation for the
 theme, available when clicking on the name of the theme below.
 
+### [agnoster](https://github.com/zimfw/agnoster)
+
+<img width="706" src="https://zimfw.github.io/images/prompts/agnoster@2.png">
+
 ### [asciiship](https://github.com/zimfw/asciiship)
 
 <img width="706" src="https://zimfw.github.io/images/prompts/asciiship@2.png">

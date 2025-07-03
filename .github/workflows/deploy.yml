@@ -9,11 +9,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       # Cache node_modules folder unless yarn.lock changes (Bulma is updated)
-      - name: Load cached node_modules 
-        uses: actions/cache@v2
+      - name: Load cached node_modules
+        uses: actions/cache@v4
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
@@ -21,7 +21,7 @@ jobs:
       # Install libraries with Yarn
       - name: Install packages 📦
         run: yarn install
-      
+
       # Builds site for production
       - name: Build site 🚧
         run: |
@@ -36,9 +36,7 @@ jobs:
 
       # Build site with Jekyll and publish to github_pages branch
       - name: Deploy to GitHub Pages 💻
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages 
-          FOLDER: _site
-          CLEAN: true
+          folder: _site
+          token: ${{ secrets.GITHUB_TOKEN }}

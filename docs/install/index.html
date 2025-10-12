@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Installation | Zim: Modular, customizable, and blazing fast Zsh framework</title>
+  <title>Installation | Zim Framework: Modular, customizable, and blazing fast Zsh framework</title>
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
@@ -247,24 +247,57 @@
             <i class="fa fa-edit" aria-hidden="true"></i>
           </a>
           <div class="content">
-            <p>Installing Zim is easy. You can choose either the automatic or manual method below:</p>
+            <p>Installing Zim Framework is easy. You can choose either the automatic or manual
+method below:</p>
 <h3 id="automatic-installation">Automatic installation</h3>
 <p>This will install a predefined set of modules and a theme for you.</p>
 <ul>
 <li>
 <p>With <code>curl</code>:</p>
-<pre><code>curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+<pre><code class="language-zsh">curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
 </code></pre>
 </li>
 <li>
 <p>With <code>wget</code>:</p>
-<pre><code>wget -nv -O - https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+<pre><code class="language-zsh">wget -nv -O - https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
 </code></pre>
 </li>
 </ul>
 <p>Restart your terminal and you're done. Enjoy your Zsh IMproved! Take some time
-to tweak your <a href="#set-up-~%2F.zshrc"><code>~/.zshrc</code></a> file, and to also check the available
+to tweak your <a href="#set-up-~%2F.zshrc"><code>~/.zshrc</code></a> file and to also check the available
 <a href="../modules">modules</a> and <a href="../themes">themes</a> you can add to your <a href="#create-~%2F.zimrc"><code>~/.zimrc</code></a>.</p>
+<h3 id="homebrew">Homebrew</h3>
+<ol>
+<li>
+<p>Install zimfw with brew:</p>
+<pre><code class="language-zsh">brew install --formula zimfw
+</code></pre>
+</li>
+<li>
+<p>Add the following to your <code>~/.zshrc</code>:</p>
+<pre><code class="language-zsh">ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+# Install missing modules and update ${ZIM_HOME}/init.zsh if missing or outdated.
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]]; then
+  source /path/to/zimfw.zsh init
+fi
+# Initialize modules.
+source ${ZIM_HOME}/init.zsh
+</code></pre>
+<p>replacing <code>/path/to/zimfw.zsh</code> with the path where brew installed the script,
+which is shown in the brew formula caveats. It is usually:</p>
+<ul>
+<li><code>/opt/homebrew/opt/zimfw/share/zimfw.zsh</code> on Apple Silicon macOS,</li>
+<li><code>/usr/local/opt/zimfw/share/zimfw.zsh</code> on Intel macOS,</li>
+<li><code>/home/linuxbrew/.linuxbrew/opt/zimfw/share/zimfw.zsh</code> on Linux.</li>
+</ul>
+</li>
+<li>
+<p><a href="#create-~%2F.zimrc">Create your <code>~/.zimrc</code> file</a></p>
+</li>
+<li>
+<p>Restart your terminal and you're done. Enjoy your Zsh IMproved!</p>
+</li>
+</ol>
 <h3 id="manual-installation">Manual installation</h3>
 <ol>
 <li>
@@ -286,23 +319,24 @@ to tweak your <a href="#set-up-~%2F.zshrc"><code>~/.zshrc</code></a> file, and t
 <p>Add the lines below to your <code>~/.zshrc</code> file, in the following order:</p>
 <ol>
 <li>
-<p>To use our <code>degit</code> tool by default to install modules:</p>
-<pre><code class="language-zsh">zstyle ':zim:zmodule' use 'degit'
+<p>To set where the zimfw plugin manager configuration file will be located:</p>
+<pre><code class="language-zsh">ZIM_CONFIG_FILE=~/.config/zsh/zimrc
 </code></pre>
-<p>This is optional, and only required if you don't have <code>git</code> installed (yes,
-Zim works even without <code>git</code>!)</p>
+<p>This is optional. The value of <code>ZIM_CONFIG_FILE</code> can be any path your user
+has at least read access to. By default, the file must be at <code>~/.zimrc</code>, if
+the <code>ZDOTDIR</code> environment variable is not defined. Otherwise, it must be at
+<code>${ZDOTDIR}/.zimrc</code>.</p>
 </li>
 <li>
-<p>To set where the directory used by Zim will be located:</p>
-<pre><code class="language-zsh">ZIM_HOME=~/.zim
+<p>To set the directory where the zimfw plugin manager will keep necessary files:</p>
+<pre><code class="language-zsh">ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 </code></pre>
 <p>The value of <code>ZIM_HOME</code> can be any directory your user has write access to.
 You can even set it to a cache directory like <code>${XDG_CACHE_HOME}/zim</code> or
-<code>~/.cache/zim</code> if you also include the step below, that automatically
-downloads the <code>zimfw</code> plugin manager.</p>
+<code>~/.cache/zim</code>.</p>
 </li>
 <li>
-<p>To automatically download the <code>zimfw</code> plugin manager if missing:</p>
+<p>To automatically download the zimfw plugin manager if missing:</p>
 <pre><code class="language-zsh"># Download zimfw plugin manager if missing.
 if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
   curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
@@ -316,46 +350,152 @@ if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
       https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
 fi
 </code></pre>
-<p>This is optional. If you choose to not include this step, you should manually
-download the <code>zimfw.zsh</code> script once and keep it at <code>${ZIM_HOME}</code>.</p>
+<p>This is optional. Alternatively, you can download the <code>zimfw.zsh</code> script
+anywhere your user has write access to: just replace the occurrences of
+<code>${ZIM_HOME}/zimfw.zsh</code> by the preferred path, like <code>/usr/local/share/zimfw/zimfw.zsh</code>
+for example. If you choose to not include this step, you should manually
+download the <code>zimfw.zsh</code> script once and keep it at the preferred path.</p>
 </li>
 <li>
-<p>To automatically install missing modules and update the initialization script
-if missing or outdated:</p>
-<pre><code class="language-zsh"># Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
-if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
-  source ${ZIM_HOME}/zimfw.zsh init -q
+<p>To automatically install missing modules and update the static initialization
+script if missing or outdated:</p>
+<pre><code class="language-zsh"># Install missing modules and update ${ZIM_HOME}/init.zsh if missing or outdated.
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]]; then
+  source ${ZIM_HOME}/zimfw.zsh init
 fi
 </code></pre>
 <p>This step is optional, but highly recommended. If you choose to not include
-it, you must remember to manually run <code>zimfw install</code> every time after you
-update your <a href="#create-~%2F.zimrc"><code>~/.zimrc</code></a> file.</p>
+it, you must remember to manually run <code>zimfw install</code> every time you update
+your <a href="#create-~%2F.zimrc"><code>~/.zimrc</code></a> file. If you have chosen to keep the
+<code>zimfw.zsh</code> in a different path as mentioned in the previous step, replace
+<code>${ZIM_HOME}/zimfw.zsh</code> by the chosen path.</p>
 </li>
 <li>
-<p>To source the initialization script, that initializes your modules:</p>
+<p>To source the static script, that will initialize your modules:</p>
 <pre><code class="language-zsh"># Initialize modules.
 source ${ZIM_HOME}/init.zsh
 </code></pre>
 </li>
 </ol>
 <h4 id="create-~%2F.zimrc">Create <code>~/.zimrc</code></h4>
-<p>You must create your <code>.zimrc</code> file at <code>~/.zimrc</code>, if the <code>ZDOTDIR</code> environment
-variable is not defined. Otherwise, it must be at <code>${ZDOTDIR}/.zimrc</code>. It's
-referred to as <code>~/.zimrc</code> in the documentation for the sake of simplicity.</p>
-<p>You can start with just:</p>
-<pre><code class="language-zsh">zmodule zsh-users/zsh-syntax-highlighting
+<p>This file configures the zimfw plugin manager. It's referred to as <code>~/.zimrc</code>
+in the documentation for the sake of simplicity, but the actual location of the
+file is defined by the following rules:</p>
+<ol>
+<li>
+<p>You can define the full path and name of the file with a <code>ZIM_CONFIG_FILE</code>
+environment variable. For example:</p>
+<pre><code class="language-zsh">ZIM_CONFIG_FILE=~/.config/zsh/zimrc
+</code></pre>
+</li>
+<li>
+<p>Or, if you defined a <code>ZDOTDIR</code> environment variable, then the file must be at
+<code>${ZDOTDIR}/.zimrc</code></p>
+</li>
+<li>
+<p>Otherwise, it must be at at <code>~/.zimrc</code>, which is it's default location.</p>
+</li>
+</ol>
+<p>As for the contents of the file, you can start with just:</p>
+<pre><code class="language-zsh"># Fish-like syntax highlighting for Zsh.
+zmodule zsh-users/zsh-syntax-highlighting
+# Fish-like autosuggestions for Zsh.
+zmodule zsh-users/zsh-autosuggestions
+</code></pre>
+<p>If you also want saner defaults:</p>
+<pre><code class="language-zsh">#
+# Modules
+#
+
+# Sets sane Zsh built-in environment options.
+zmodule environment
+# Applies correct bindkeys for input events.
+zmodule input
+# Utility aliases and functions. Adds colour to ls, grep and less.
+zmodule utility
+
+#
+# Modules that must be initialized last
+#
+
+# Fish-like syntax highlighting for Zsh.
+zmodule zsh-users/zsh-syntax-highlighting
+# Fish-like autosuggestions for Zsh.
 zmodule zsh-users/zsh-autosuggestions
 </code></pre>
 <p>If you also want one of our prompt <a href="../themes">themes</a>:</p>
-<pre><code>zmodule asciiship
+<pre><code class="language-zsh">#
+# Modules
+#
+
+# Sets sane Zsh built-in environment options.
+zmodule environment
+# Applies correct bindkeys for input events.
+zmodule input
+# Utility aliases and functions. Adds colour to ls, grep and less.
+zmodule utility
+
+#
+# Prompt
+#
+
+# Exposes to prompts how long the last command took to execute, used by asciiship.
+zmodule duration-info
+# Exposes git repository status information to prompts, used by asciiship.
+zmodule git-info
+# A heavily reduced, ASCII-only version of the Spaceship and Starship prompts.
+zmodule asciiship
+
+#
+# Modules that must be initialized last
+#
+
+# Fish-like syntax highlighting for Zsh.
 zmodule zsh-users/zsh-syntax-highlighting
+# Fish-like autosuggestions for Zsh.
 zmodule zsh-users/zsh-autosuggestions
 </code></pre>
 <p>If you want to use our <a href="https://github.com/zimfw/completion">completion</a> module too, instead of using <code>compinit</code> directly:</p>
-<pre><code class="language-zsh">zmodule asciiship
+<pre><code class="language-zsh">#
+# Modules
+#
+
+# Sets sane Zsh built-in environment options.
+zmodule environment
+# Applies correct bindkeys for input events.
+zmodule input
+# Utility aliases and functions. Adds colour to ls, grep and less.
+zmodule utility
+
+#
+# Prompt
+#
+
+# Exposes to prompts how long the last command took to execute, used by asciiship.
+zmodule duration-info
+# Exposes git repository status information to prompts, used by asciiship.
+zmodule git-info
+# A heavily reduced, ASCII-only version of the Spaceship and Starship prompts.
+zmodule asciiship
+
+#
+# Completion
+#
+
+# Additional completion definitions for Zsh.
 zmodule zsh-users/zsh-completions --fpath src
+# Enables and configures smart and extensive tab completion.
+# completion must be sourced after all modules that add completion definitions.
 zmodule completion
+
+#
+# Modules that must be initialized last
+#
+
+# Fish-like syntax highlighting for Zsh.
+# zsh-users/zsh-syntax-highlighting must be sourced after completion
 zmodule zsh-users/zsh-syntax-highlighting
+# Fish-like autosuggestions for Zsh.
 zmodule zsh-users/zsh-autosuggestions
 </code></pre>
 <p>The <a href="https://github.com/zimfw/completion">completion</a> module calls <code>compinit</code> for you. You should remove any

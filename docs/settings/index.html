@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Settings | Zim: Modular, customizable, and blazing fast Zsh framework</title>
+  <title>Settings | Zim Framework: Modular, customizable, and blazing fast Zsh framework</title>
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
@@ -247,24 +247,35 @@
             <i class="fa fa-edit" aria-hidden="true"></i>
           </a>
           <div class="content">
-            <p>Customize path of the directory used by Zim with the <code>ZIM_HOME</code> environment
+            <p>Set the path of the directory used by zimfw with the <code>ZIM_HOME</code> environment
 variable:</p>
-<pre><code>ZIM_HOME=~/.zim
+<pre><code>ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 </code></pre>
-<p>By default, the <code>zimfw</code> plugin manager configuration file must be at <code>~/.zimrc</code>,
+<p>By default, the zimfw plugin manager configuration file must be at <code>~/.zimrc</code>,
 if the <code>ZDOTDIR</code> environment variable is not defined. Otherwise, it must be at
 <code>${ZDOTDIR}/.zimrc</code>. You can customize its full path and name with the
 <code>ZIM_CONFIG_FILE</code> environment variable:</p>
 <pre><code>ZIM_CONFIG_FILE=~/.config/zsh/zimrc
 </code></pre>
-<p>Modules are installed using <code>git</code> by default. If you don't have <code>git</code>
-installed, or if you want to take advantage of our degit tool for faster and
-lighter module installations, you can set degit as the default tool with:</p>
+<p>The zimfw plugin manager will detect if <code>git</code> is installed and fall back to work
+without <code>git</code> with its degit tool. If you want to take advantage of its degit
+tool regardless for faster and lighter module installations, you can set degit
+as the default tool with:</p>
 <pre><code>zstyle ':zim:zmodule' use 'degit'
 </code></pre>
-<p>By default, <code>zimfw</code> will check if it has a new version available every 30 days.
-This can be disabled with:</p>
+<p>By default, zimfw will check if it has a new version available every 30 days. If
+the <code>zimfw.zsh</code> file cannot be upgraded, because your user does not have write
+access to it, then this will be disabled. This can be manually disabled with:</p>
 <pre><code>zstyle ':zim' disable-version-check yes
+</code></pre>
+<p>By default, zimfw will disable color output when executed through a pipe or as a
+non-TTY ssh command. To force disabling color output, prefix the zimfw call with
+<code>NO_COLOR=1</code>, like:</p>
+<pre><code>NO_COLOR=1 zimfw install
+</code></pre>
+<p>or add the following to your <code>.zshrc</code>, which should also disable color output
+for other tools. See https://no-color.org/</p>
+<pre><code>export NO_COLOR=1
 </code></pre>
 
           </div>

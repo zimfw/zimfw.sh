@@ -1,5 +1,5 @@
 # zimfw.sh
-A modern website for the Zim framework.
+A modern website for the Zim Framework.
 
 Built with Bulma, aos.js, and 11ty.
 

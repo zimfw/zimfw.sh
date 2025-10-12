@@ -128,7 +128,7 @@ Per-call initialization options:
 
 ### zimfw
 
-The Zim plugin manager:
+The Zim Framework plugin manager:
 
   * Added new modules to `~/.zimrc`? Run `zimfw install`.
   * Removed modules from `~/.zimrc`? Run `zimfw uninstall`.

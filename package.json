@@ -1,7 +1,7 @@
 {
   "name": "zimfw.sh",
   "version": "1.0.0",
-  "description": "A modern website for the Zim framework.",
+  "description": "A modern website for the Zim Framework.",
   "main": "index.js",
   "repository": "https://github.com/zimfw/zimfw.sh.git",
   "license": "MIT",

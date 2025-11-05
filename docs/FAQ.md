@@ -10,7 +10,8 @@ Visit the [installation](../install) page to learn more about various ways of in
 
 #### How do I uninstall Zim Framework?
 
-The best way to remove Zim Framework is to manually delete `~/.zim`, `~/.zimrc`, and remove the initialization lines from your `~/.zshenv`, `~/.zshrc` and `~/.zlogin`.
+The best way to remove Zim Framework is to manually delete `~/.zim`, `~/.zimrc`, and
+remove the initialization lines from your `~/.zshenv`, `~/.zshrc` and `~/.zlogin`.
 
 #### How do I add modules?
 

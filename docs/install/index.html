@@ -265,7 +265,7 @@ method below:</p>
 </ul>
 <p>Restart your terminal and you're done. Enjoy your Zsh IMproved! Take some time
 to tweak your <a href="#set-up-~%2F.zshrc"><code>~/.zshrc</code></a> file and to also check the available
-<a href="../modules">modules</a> and <a href="../themes">themes</a> you can add to your <a href="#create-~%2F.zimrc"><code>~/.zimrc</code></a>.</p>
+<a href="../modules">modules</a> and <a href="../themes">themes</a> you can add to your <code>~/.zimrc</code>.</p>
 <h3 id="homebrew">Homebrew</h3>
 <ol>
 <li>
@@ -292,9 +292,6 @@ which is shown in the brew formula caveats. It is usually:</p>
 </ul>
 </li>
 <li>
-<p><a href="#create-~%2F.zimrc">Create your <code>~/.zimrc</code> file</a></p>
-</li>
-<li>
 <p>Restart your terminal and you're done. Enjoy your Zsh IMproved!</p>
 </li>
 </ol>
@@ -307,9 +304,6 @@ which is shown in the brew formula caveats. It is usually:</p>
 </li>
 <li>
 <p><a href="#set-up-~%2F.zshrc">Set up your <code>~/.zshrc</code> file</a></p>
-</li>
-<li>
-<p><a href="#create-~%2F.zimrc">Create your <code>~/.zimrc</code> file</a></p>
 </li>
 <li>
 <p>Restart your terminal and you're done. Enjoy your Zsh IMproved!</p>
@@ -350,11 +344,12 @@ if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
       https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
 fi
 </code></pre>
-<p>This is optional. Alternatively, you can download the <code>zimfw.zsh</code> script
-anywhere your user has write access to: just replace the occurrences of
-<code>${ZIM_HOME}/zimfw.zsh</code> by the preferred path, like <code>/usr/local/share/zimfw/zimfw.zsh</code>
-for example. If you choose to not include this step, you should manually
-download the <code>zimfw.zsh</code> script once and keep it at the preferred path.</p>
+<p>This is optional. Alternatively, the <code>zimfw.zsh</code> script can be installed with
+a package manager or downloaded anywhere your user has write access to: just
+replace the occurrences of <code>${ZIM_HOME}/zimfw.zsh</code> by the preferred path,
+like <code>/usr/local/share/zimfw/zimfw.zsh</code> for example. If you choose to not
+include this step, you should install or manually download the <code>zimfw.zsh</code>
+script once and keep it at the preferred path.</p>
 </li>
 <li>
 <p>To automatically install missing modules and update the static initialization
@@ -366,8 +361,8 @@ fi
 </code></pre>
 <p>This step is optional, but highly recommended. If you choose to not include
 it, you must remember to manually run <code>zimfw install</code> every time you update
-your <a href="#create-~%2F.zimrc"><code>~/.zimrc</code></a> file. If you have chosen to keep the
-<code>zimfw.zsh</code> in a different path as mentioned in the previous step, replace
+your <code>~/.zimrc</code> file. If you have chosen to keep the <code>zimfw.zsh</code> script in a
+different path as mentioned in the previous step, replace
 <code>${ZIM_HOME}/zimfw.zsh</code> by the chosen path.</p>
 </li>
 <li>
@@ -377,134 +372,6 @@ source ${ZIM_HOME}/init.zsh
 </code></pre>
 </li>
 </ol>
-<h4 id="create-~%2F.zimrc">Create <code>~/.zimrc</code></h4>
-<p>This file configures the zimfw plugin manager. It's referred to as <code>~/.zimrc</code>
-in the documentation for the sake of simplicity, but the actual location of the
-file is defined by the following rules:</p>
-<ol>
-<li>
-<p>You can define the full path and name of the file with a <code>ZIM_CONFIG_FILE</code>
-environment variable. For example:</p>
-<pre><code class="language-zsh">ZIM_CONFIG_FILE=~/.config/zsh/zimrc
-</code></pre>
-</li>
-<li>
-<p>Or, if you defined a <code>ZDOTDIR</code> environment variable, then the file must be at
-<code>${ZDOTDIR}/.zimrc</code></p>
-</li>
-<li>
-<p>Otherwise, it must be at at <code>~/.zimrc</code>, which is it's default location.</p>
-</li>
-</ol>
-<p>As for the contents of the file, you can start with just:</p>
-<pre><code class="language-zsh"># Fish-like syntax highlighting for Zsh.
-zmodule zsh-users/zsh-syntax-highlighting
-# Fish-like autosuggestions for Zsh.
-zmodule zsh-users/zsh-autosuggestions
-</code></pre>
-<p>If you also want saner defaults:</p>
-<pre><code class="language-zsh">#
-# Modules
-#
-
-# Sets sane Zsh built-in environment options.
-zmodule environment
-# Applies correct bindkeys for input events.
-zmodule input
-# Utility aliases and functions. Adds colour to ls, grep and less.
-zmodule utility
-
-#
-# Modules that must be initialized last
-#
-
-# Fish-like syntax highlighting for Zsh.
-zmodule zsh-users/zsh-syntax-highlighting
-# Fish-like autosuggestions for Zsh.
-zmodule zsh-users/zsh-autosuggestions
-</code></pre>
-<p>If you also want one of our prompt <a href="../themes">themes</a>:</p>
-<pre><code class="language-zsh">#
-# Modules
-#
-
-# Sets sane Zsh built-in environment options.
-zmodule environment
-# Applies correct bindkeys for input events.
-zmodule input
-# Utility aliases and functions. Adds colour to ls, grep and less.
-zmodule utility
-
-#
-# Prompt
-#
-
-# Exposes to prompts how long the last command took to execute, used by asciiship.
-zmodule duration-info
-# Exposes git repository status information to prompts, used by asciiship.
-zmodule git-info
-# A heavily reduced, ASCII-only version of the Spaceship and Starship prompts.
-zmodule asciiship
-
-#
-# Modules that must be initialized last
-#
-
-# Fish-like syntax highlighting for Zsh.
-zmodule zsh-users/zsh-syntax-highlighting
-# Fish-like autosuggestions for Zsh.
-zmodule zsh-users/zsh-autosuggestions
-</code></pre>
-<p>If you want to use our <a href="https://github.com/zimfw/completion">completion</a> module too, instead of using <code>compinit</code> directly:</p>
-<pre><code class="language-zsh">#
-# Modules
-#
-
-# Sets sane Zsh built-in environment options.
-zmodule environment
-# Applies correct bindkeys for input events.
-zmodule input
-# Utility aliases and functions. Adds colour to ls, grep and less.
-zmodule utility
-
-#
-# Prompt
-#
-
-# Exposes to prompts how long the last command took to execute, used by asciiship.
-zmodule duration-info
-# Exposes git repository status information to prompts, used by asciiship.
-zmodule git-info
-# A heavily reduced, ASCII-only version of the Spaceship and Starship prompts.
-zmodule asciiship
-
-#
-# Completion
-#
-
-# Additional completion definitions for Zsh.
-zmodule zsh-users/zsh-completions --fpath src
-# Enables and configures smart and extensive tab completion.
-# completion must be sourced after all modules that add completion definitions.
-zmodule completion
-
-#
-# Modules that must be initialized last
-#
-
-# Fish-like syntax highlighting for Zsh.
-# zsh-users/zsh-syntax-highlighting must be sourced after completion
-zmodule zsh-users/zsh-syntax-highlighting
-# Fish-like autosuggestions for Zsh.
-zmodule zsh-users/zsh-autosuggestions
-</code></pre>
-<p>The <a href="https://github.com/zimfw/completion">completion</a> module calls <code>compinit</code> for you. You should remove any
-<code>compinit</code> calls from your <code>~/.zshrc</code> when you use this module. The modules will
-be initialized in the order they are defined, and <a href="https://github.com/zimfw/completion">completion</a> must be
-initialized <em>after</em> all modules that add completion definitions, so it must come
-after <a href="https://github.com/zsh-users/zsh-completions">zsh-users/zsh-completions</a>.</p>
-<p>Check the <a href="../commands/#zmodule"><code>zmodule</code> usage</a> for more examples on how to use it to
-define the modules you want to use.</p>
 
           </div>
         </div>

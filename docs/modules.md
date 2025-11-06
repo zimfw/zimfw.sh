@@ -25,14 +25,16 @@ Productivity
 | --------------------------------------------------- | --------------------------------------------------------------------------- |
 | [archive](https://github.com/zimfw/archive)         | Provides archive and unarchive functions for easy archive manipulation.     |
 | [asdf](https://github.com/zimfw/asdf)               | Sets up asdf, with auto install and optimized usage of the direnv plugin.   |
-| [direnv](https://github.com/zimfw/direnv)           | Sets up the direnv Zsh shell integration                                    |
+| [direnv](https://github.com/zimfw/direnv)           | Sets up the direnv Zsh shell integration.                                   |
 | [exa](https://github.com/zimfw/exa)                 | Adds aliases and better defaults for exa.                                   |
 | [fzf](https://github.com/zimfw/fzf)                 | Configures fzf for faster fetching of files and directories names.          |
 | [git](https://github.com/zimfw/git)                 | Provides nice git aliases and functions.                                    |
 | [k](https://github.com/zimfw/k)                     | All kubectl aliases in one function.                                        |
+| [macports](https://github.com/zimfw/macports)       | Defines MacPorts aliases.                                                   |
 | [magic-enter](https://github.com/zimfw/magic-enter) | Shown when there is no command and user presses ENTER.                      |
 | [pvenv](https://github.com/zimfw/pvenv)             | Manages all python venvs in one place.                                      |
 | [ruby](https://github.com/zimfw/ruby)               | Provides ruby, bundler, rbenv and rvm aliases and initialization.           |
+| [smite](https://github.com/zimfw/smite)             | Makes it easier to opt-out of typos and dead ends in your shell history.    |
 | [ssh](https://github.com/zimfw/ssh)                 | Provides a convenient way to load ssh-agent.                                |
 | [termtitle](https://github.com/zimfw/termtitle)     | Sets a custom terminal title.                                               |
 | [utility](https://github.com/zimfw/utility)         | Adds utility aliases and functions. Adds colour to ls, grep and less.       |

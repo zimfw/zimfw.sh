@@ -23,14 +23,13 @@ Productivity
 
 | Name                                                | Description                                                                 |
 | --------------------------------------------------- | --------------------------------------------------------------------------- |
-| [archive](https://github.com/zimfw/archive)         | Provides archive and unarchive functions for easy archive manipulation.     |
+| [archive](https://github.com/zimfw/archive)         | Provides functions for easy archive manipulation.                           |
 | [asdf](https://github.com/zimfw/asdf)               | Sets up asdf, with auto install and optimized usage of the direnv plugin.   |
 | [direnv](https://github.com/zimfw/direnv)           | Sets up the direnv Zsh shell integration.                                   |
-| [exa](https://github.com/zimfw/exa)                 | Adds aliases and better defaults for exa.                                   |
+| [exa](https://github.com/zimfw/exa)                 | Adds aliases and better defaults for eza or exa.                            |
 | [fzf](https://github.com/zimfw/fzf)                 | Configures fzf for faster fetching of files and directories names.          |
 | [git](https://github.com/zimfw/git)                 | Provides nice git aliases and functions.                                    |
 | [k](https://github.com/zimfw/k)                     | All kubectl aliases in one function.                                        |
-| [macports](https://github.com/zimfw/macports)       | Defines MacPorts aliases.                                                   |
 | [magic-enter](https://github.com/zimfw/magic-enter) | Shown when there is no command and user presses ENTER.                      |
 | [pvenv](https://github.com/zimfw/pvenv)             | Manages all python venvs in one place.                                      |
 | [ruby](https://github.com/zimfw/ruby)               | Provides ruby, bundler, rbenv and rvm aliases and initialization.           |
@@ -54,6 +53,7 @@ Distro-specific
 | Name                                          | Description                                  |
 | --------------------------------------------- | -------------------------------------------- |
 | [homebrew](https://github.com/zimfw/homebrew) | Adds aliases for Homebrew.                   |
+| [macports](https://github.com/zimfw/macports) | Adds aliases for MacPorts.                   |
 | [pacman](https://github.com/zimfw/pacman)     | Adds aliases for the pacman package manager. |
 
 Community modules

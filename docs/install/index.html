@@ -275,21 +275,61 @@ to tweak your <a href="#set-up-~%2F.zshrc"><code>~/.zshrc</code></a> file and to
 </li>
 <li>
 <p>Add the following to your <code>~/.zshrc</code>:</p>
+<details id="homebrew-apple-silicon-macos">
+<summary>Apple Silicon macOS</summary>
 <pre><code class="language-zsh">ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 # Install missing modules and update ${ZIM_HOME}/init.zsh if missing or outdated.
 if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]]; then
-  source /path/to/zimfw.zsh init
+  source /opt/homebrew/opt/zimfw/share/zimfw.zsh init
 fi
 # Initialize modules.
 source ${ZIM_HOME}/init.zsh
 </code></pre>
-<p>replacing <code>/path/to/zimfw.zsh</code> with the path where brew installed the script,
-which is shown in the brew formula caveats. It is usually:</p>
-<ul>
-<li><code>/opt/homebrew/opt/zimfw/share/zimfw.zsh</code> on Apple Silicon macOS,</li>
-<li><code>/usr/local/opt/zimfw/share/zimfw.zsh</code> on Intel macOS,</li>
-<li><code>/home/linuxbrew/.linuxbrew/opt/zimfw/share/zimfw.zsh</code> on Linux.</li>
-</ul>
+</details>
+<details id="homebrew-intel-macos">
+<summary>Intel macOS</summary>
+<pre><code class="language-zsh">ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+# Install missing modules and update ${ZIM_HOME}/init.zsh if missing or outdated.
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]]; then
+  source /usr/local/opt/zimfw/share/zimfw.zsh init
+fi
+# Initialize modules.
+source ${ZIM_HOME}/init.zsh
+</code></pre>
+</details>
+<details id="homebrew-linux">
+<summary>Linux</summary>
+<pre><code class="language-zsh">ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+# Install missing modules and update ${ZIM_HOME}/init.zsh if missing or outdated.
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]]; then
+  source /home/linuxbrew/.linuxbrew/opt/zimfw/share/zimfw.zsh init
+fi
+# Initialize modules.
+source ${ZIM_HOME}/init.zsh
+</code></pre>
+</details>
+</li>
+<li>
+<p>Restart your terminal and you're done. Enjoy your Zsh IMproved!</p>
+</li>
+</ol>
+<h3 id="arch-linux">Arch Linux</h3>
+<ol>
+<li>
+<p>Install zimfw from AUR:</p>
+<pre><code class="language-zsh">yay -S --noconfirm zimfw
+</code></pre>
+</li>
+<li>
+<p>Add the following to your <code>~/.zshrc</code>:</p>
+<pre><code class="language-zsh">ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+# Install missing modules and update ${ZIM_HOME}/init.zsh if missing or outdated.
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]]; then
+  source /usr/share/zimfw/zimfw.zsh init
+fi
+# Initialize modules.
+source ${ZIM_HOME}/init.zsh
+</code></pre>
 </li>
 <li>
 <p>Restart your terminal and you're done. Enjoy your Zsh IMproved!</p>

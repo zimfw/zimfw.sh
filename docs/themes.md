@@ -28,6 +28,10 @@ theme, available when clicking on the name of the theme below.
 
 <img width="706" src="https://zimfw.github.io/images/prompts/gitster@2.png">
 
+### [hometown](https://github.com/zimfw/hometown)
+
+<img width="706" src="https://zimfw.github.io/images/prompts/hometown@2.png">
+
 ### [magicmace](https://github.com/zimfw/magicmace)
 
 <img width="706" src="https://zimfw.github.io/images/prompts/magicmace@2.png">

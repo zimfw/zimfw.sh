@@ -78,6 +78,6 @@ These are modules provided by users of the community.
 | [joke/zim-starship](https://github.com/joke/zim-starship)                         | Sets up [starship](https://github.com/starship/starship) prompt in zsh.                  |
 | [joke/zim-steampipe](https://github.com/joke/zim-steampipe)                       | Sets up [steampipe](https://github.com/turbot/steampipe) in zsh.                         |
 | [joke/zim-yq](https://github.com/joke/zim-yq)                                     | Sets up [yq](https://github.com/mikefarah/yq) in zsh.                                    |
-| [kiesman99/zim-zoxide](https://github.com/kiesman99/zim-zoxide)                   | Sets up [zoxide](https://github.com/ajeetdsouza/zoxide) in zsh.                          |
+| [antoineco/zim-zoxide](https://github.com/antoineco/zim-zoxide)                   | Sets up the [zoxide](https://github.com/ajeetdsouza/zoxide) Zsh shell integration.
 | [pXius/zim-gcloud](https://github.com/pXius/zim-gcloud)                           | Adds completion to [gcloud CLI](https://cloud.google.com/sdk/gcloud).                    |
 | [shanwker1223/zim-alias-finder](https://github.com/shanwker1223/zim-alias-finder) | Provides suggestions to executed commands from registered aliases.                       |
